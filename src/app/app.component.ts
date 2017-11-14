@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
+import {TranslateService} from '@ngx-translate/core';
 
 import {HomePage} from '../pages/home/home';
 import {MethodPage} from '../pages/method/method';
@@ -17,41 +18,55 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any, icon: string, category: string, type: string }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              private translateService: TranslateService) {
+
     this.initializeApp();
+
+    // Set default language to 'fr'
+    platform.ready().then(() => {
+      translateService.setDefaultLang('fr');
+      translateService.use('fr');
+    });
 
     // used for an example of ngFor and navigation
     this.pages = [
       {
-        title: 'Accueil',
+        title: 'HOME_PAGE.TITLE',
         component: HomePage,
         icon: 'calculator',
         category: 'general',
         type: 'page'
       },
       {
-        title: 'Méthode',
+        title: 'METHOD_PAGE.TITLE',
         component: MethodPage,
         icon: 'help-circle',
         category: 'general',
         type: 'page'
       },
       {
-        title: 'Historique',
+        title: 'HISTORY_PAGE.TITLE',
         component: HistoryPage,
         icon: 'time',
         category: 'general',
         type: 'page'
       },
       {
-        title: 'Langue',
+        title: 'CHANGE_LANG',
         component: null,
         icon: 'flag',
         category: 'other',
-        type: 'link'
+        type: 'translate'
       },
     ];
 
+  }
+
+  segmentChanged(event) {
+    this.translateService.use(event._value);
   }
 
   initializeApp() {
@@ -67,8 +82,8 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     switch (page.type) {
-      case 'link':
-        console.log('Change Language');
+      case 'translate':
+        this.translateApp();
         break;
       case 'page':
         this.nav.setRoot(page.component);
@@ -77,5 +92,22 @@ export class MyApp {
         this.nav.setRoot(page.component);
         break;
     }
+  }
+
+  translateApp() {
+    let currentLanguage = this.translateService.getDefaultLang(), setLanguage;
+    switch (currentLanguage) {
+      case 'fr':
+        setLanguage = 'en';
+        break;
+      case 'en':
+        setLanguage = 'fr';
+        break;
+      default:
+        setLanguage = 'en';
+        break;
+    }
+    this.translateService.setDefaultLang(setLanguage);
+    this.translateService.use(setLanguage);
   }
 }
