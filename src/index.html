@@ -28,6 +28,21 @@
     }
   </script>-->
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    imageFont: null,
+    extensions: ["asciimath2jax.js"],
+    jax: ["input/AsciiMath","output/HTML-CSS"],
+    asciimath2jax: {
+      delimiters: [['`','`'], ['$','$']],
+      preview: [["img",{src: "assets/MathJax/loader/loader.gif"}]]
+    }
+  });
+  </script>
+  <script type="text/javascript" async
+          src="assets/MathJax/MathJax.js">
+  </script>
+
   <link href="build/main.css" rel="stylesheet">
 
 </head>

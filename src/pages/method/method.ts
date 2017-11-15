@@ -16,7 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class MethodPage {
 
+  formulae: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.formulae="`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`";
+  }
+
+  ionViewDidEnter() {
+    eval('MathJax.Hub.Queue(["Typeset", MathJax.Hub])');
   }
 
   ionViewDidLoad() {
