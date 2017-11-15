@@ -44,7 +44,7 @@ export class MyApp {
       {
         title: 'METHOD_PAGE.TITLE',
         component: MethodPage,
-        icon: 'help-circle',
+        icon: 'cog',
         category: 'general'
       },
       {
