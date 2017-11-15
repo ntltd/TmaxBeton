@@ -7,7 +7,25 @@
     "TITLE": "Historique"
   },
   "METHOD_PAGE": {
-    "TITLE": "Méthode"
+    "TITLE": "Méthode",
+    "STEP_1":{
+      "TITLE": "Etape 1"
+    },
+    "STEP_2":{
+      "TITLE": "Etape 2"
+    },
+    "STEP_3":{
+      "TITLE": "Etape 3"
+    },
+    "STEP_4":{
+      "TITLE": "Etape 4"
+    },
+    "STEP_5":{
+      "TITLE": "Etape 5"
+    },
+    "STEP_6":{
+      "TITLE": "Etape 6"
+    }
   },
   "CHANGE_LANG": "English"
 }
