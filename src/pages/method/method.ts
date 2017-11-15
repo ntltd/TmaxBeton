@@ -13,6 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-method',
   templateUrl: 'method.html',
 })
+
 export class MethodPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

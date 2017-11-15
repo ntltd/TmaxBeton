@@ -15,8 +15,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  switchLang: boolean;
 
-  pages: Array<{ title: string, component: any, icon: string, category: string, type: string }>;
+  pages: Array<{ title: string, component: any, icon: string, category: string}>;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
@@ -29,6 +30,7 @@ export class MyApp {
     platform.ready().then(() => {
       translateService.setDefaultLang('fr');
       translateService.use('fr');
+      this.switchLang = this.isEnglishTranslation();
     });
 
     // used for an example of ngFor and navigation
@@ -37,30 +39,20 @@ export class MyApp {
         title: 'HOME_PAGE.TITLE',
         component: HomePage,
         icon: 'calculator',
-        category: 'general',
-        type: 'page'
+        category: 'general'
       },
       {
         title: 'METHOD_PAGE.TITLE',
         component: MethodPage,
         icon: 'help-circle',
-        category: 'general',
-        type: 'page'
+        category: 'general'
       },
       {
         title: 'HISTORY_PAGE.TITLE',
         component: HistoryPage,
         icon: 'time',
-        category: 'general',
-        type: 'page'
-      },
-      {
-        title: 'CHANGE_LANG',
-        component: null,
-        icon: 'flag',
-        category: 'other',
-        type: 'translate'
-      },
+        category: 'general'
+      }
     ];
 
   }
@@ -82,9 +74,6 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     switch (page.type) {
-      case 'translate':
-        this.translateApp();
-        break;
       case 'page':
         this.nav.setRoot(page.component);
         break;
@@ -92,6 +81,10 @@ export class MyApp {
         this.nav.setRoot(page.component);
         break;
     }
+  }
+
+  isEnglishTranslation():boolean{
+    return this.translateService.getDefaultLang() == 'en';
   }
 
   translateApp() {
