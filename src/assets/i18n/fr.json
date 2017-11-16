@@ -1,29 +1,68 @@
 {
   "APP_TITLE": "Tmax Béton",
   "HOME_PAGE": {
-    "TITLE": "Calculatrice"
+    "TITLE": "Accueil"
+  },
+  "CALCULATOR_PAGE": {
+    "TITLE": "Calculateur",
+    "FIELD_1": {
+      "TITLE": "Field 1",
+      "UNIT": "Unit"
+    },
+    "FIELD_2": {
+      "TITLE": "Field 2",
+      "UNIT": "Unit"
+    },
+    "FIELD_3": {
+      "TITLE": "Field 3",
+      "UNIT": "Unit"
+    },
+    "FIELD_4": {
+      "TITLE": "Field 4",
+      "UNIT": "Unit"
+    },
+    "FIELD_5": {
+      "TITLE": "Field 5",
+      "UNIT": "Unit"
+    },
+    "FIELD_6": {
+      "TITLE": "Field 6",
+      "UNIT": "Unit"
+    },
+    "FIELD_7": {
+      "TITLE": "Field 7",
+      "UNIT": "Unit"
+    },
+    "FIELD_8": {
+      "TITLE": "Field 8",
+      "UNIT": "Unit"
+    },
+    "FIELD_9": {
+      "TITLE": "Field 9",
+      "UNIT": "Unit"
+    }
   },
   "HISTORY_PAGE": {
     "TITLE": "Historique"
   },
   "METHOD_PAGE": {
     "TITLE": "Méthode",
-    "STEP_1":{
+    "STEP_1": {
       "TITLE": "Etape 1"
     },
-    "STEP_2":{
+    "STEP_2": {
       "TITLE": "Etape 2"
     },
-    "STEP_3":{
+    "STEP_3": {
       "TITLE": "Etape 3"
     },
-    "STEP_4":{
+    "STEP_4": {
       "TITLE": "Etape 4"
     },
-    "STEP_5":{
+    "STEP_5": {
       "TITLE": "Etape 5"
     },
-    "STEP_6":{
+    "STEP_6": {
       "TITLE": "Etape 6"
     }
   },

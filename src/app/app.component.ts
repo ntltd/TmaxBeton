@@ -7,6 +7,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {HomePage} from '../pages/home/home';
 import {MethodPage} from '../pages/method/method';
 import {HistoryPage} from '../pages/history/history';
+import {CalculatorPage} from '../pages/calculator/calculator';
 
 @Component({
   templateUrl: 'app.html'
@@ -38,6 +39,12 @@ export class MyApp {
       {
         title: 'HOME_PAGE.TITLE',
         component: HomePage,
+        icon: 'home',
+        category: 'general'
+      },
+      {
+        title: 'CALCULATOR_PAGE.TITLE',
+        component: CalculatorPage,
         icon: 'calculator',
         category: 'general'
       },

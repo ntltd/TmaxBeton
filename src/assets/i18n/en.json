@@ -1,7 +1,46 @@
 {
   "APP_TITLE": "Tmax Concrete",
   "HOME_PAGE": {
-    "TITLE": "Calculator"
+    "TITLE": "Home"
+  },
+  "CALCULATOR_PAGE": {
+    "TITLE": "Calculator",
+    "FIELD_1": {
+      "TITLE": "Field 1",
+      "UNIT": "Unit"
+    },
+    "FIELD_2": {
+      "TITLE": "Field 2",
+      "UNIT": "Unit"
+    },
+    "FIELD_3": {
+      "TITLE": "Field 3",
+      "UNIT": "Unit"
+    },
+    "FIELD_4": {
+      "TITLE": "Field 4",
+      "UNIT": "Unit"
+    },
+    "FIELD_5": {
+      "TITLE": "Field 5",
+      "UNIT": "Unit"
+    },
+    "FIELD_6": {
+      "TITLE": "Field 6",
+      "UNIT": "Unit"
+    },
+    "FIELD_7": {
+      "TITLE": "Field 7",
+      "UNIT": "Unit"
+    },
+    "FIELD_8": {
+      "TITLE": "Field 8",
+      "UNIT": "Unit"
+    },
+    "FIELD_9": {
+      "TITLE": "Field 9",
+      "UNIT": "Unit"
+    }
   },
   "HISTORY_PAGE": {
     "TITLE": "Historic"
