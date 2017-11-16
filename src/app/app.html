@@ -1,8 +1,8 @@
 <ion-menu [content]="content" type="push">
-  <ion-content padding-top class="drawer">
-    <h1>{{ 'APP_TITLE' | translate }}</h1>
+  <ion-content class="drawer">
     <ion-list no-lines>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="primary">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="primary"
+              [class.drawer-item-highlighted]="checkActivePage(p)">
         <ion-icon name="{{p.icon}}" item-start></ion-icon>
         {{ p.title | translate}}
       </button>

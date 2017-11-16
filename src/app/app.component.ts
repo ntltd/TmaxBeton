@@ -16,9 +16,10 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  activePage: any;
   switchLang: boolean;
 
-  pages: Array<{ title: string, component: any, icon: string, category: string}>;
+  pages: Array<{ title: string, component: any, icon: string, category: string, selected: boolean }>;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
@@ -40,27 +41,33 @@ export class MyApp {
         title: 'HOME_PAGE.TITLE',
         component: HomePage,
         icon: 'home',
-        category: 'general'
+        category: 'general',
+        selected: false
       },
       {
         title: 'CALCULATOR_PAGE.TITLE',
         component: CalculatorPage,
         icon: 'calculator',
-        category: 'general'
+        category: 'general',
+        selected: false
       },
       {
         title: 'METHOD_PAGE.TITLE',
         component: MethodPage,
         icon: 'cog',
-        category: 'general'
+        category: 'general',
+        selected: false
       },
       {
         title: 'HISTORY_PAGE.TITLE',
         component: HistoryPage,
         icon: 'time',
-        category: 'general'
+        category: 'general',
+        selected: false
       }
     ];
+
+    this.activePage = this.pages[0];
 
   }
 
@@ -77,20 +84,18 @@ export class MyApp {
     });
   }
 
+  checkActivePage(page) {
+    return page == this.activePage;
+  }
+
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    switch (page.type) {
-      case 'page':
-        this.nav.setRoot(page.component);
-        break;
-      default:
-        this.nav.setRoot(page.component);
-        break;
-    }
+    this.nav.setRoot(page.component);
+    this.activePage = page;
   }
 
-  isEnglishTranslation():boolean{
+  isEnglishTranslation(): boolean {
     return this.translateService.getDefaultLang() == 'en';
   }
 
