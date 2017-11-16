@@ -15,12 +15,13 @@
 // automatically applied to the <body> element in the app.
 
 .drawer {
-  background: color($colors, primary);
-  color: color($colors, white) !important;
+  background: map_get($colors, primary);
+  color: map_get($colors, white) !important;
 }
 
 .drawer-item-highlighted {
-  font-weight: 900 !important;
+  font-weight: 700 !important;
+  color: map_get($colors, light) !important;
 }
 
 .no-padding {
@@ -36,4 +37,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.mini-logo {
+  height: 48px !important;
+  width: auto;
+  display: inline-block !important;
+}
+
+.drawer-logo {
+  background-color: map_get($colors, light) !important;
+  padding: 8px;
+}
+
+.drawer-header {
+  padding: 16px;
 }

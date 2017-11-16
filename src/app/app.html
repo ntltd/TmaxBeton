@@ -1,5 +1,13 @@
 <ion-menu [content]="content" type="push">
+
+  <img class="mini-logo" src="../../assets/imgs/logos/logo_efb.svg"
+       onerror="this.onerror=null; this.src='../../assets/imgs/logos/logo_efb_h100.png'">
+
   <ion-content class="drawer">
+    <div class="drawer-header">
+      <img class="drawer-logo" src="../../assets/imgs/logos/logo_efb.svg"
+           onerror="this.onerror=null; this.src='../../assets/imgs/logos/logo_efb_h100.png'">
+    </div>
     <ion-list no-lines>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="primary"
               [class.drawer-item-highlighted]="checkActivePage(p)">
