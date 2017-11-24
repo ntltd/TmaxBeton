@@ -6,6 +6,13 @@
   },
   "CALCULATOR_PAGE": {
     "TITLE": "Calculateur",
+    "SELECT_1": {
+      "TITLE": "Type de Béton",
+      "SELECTED_TEXT": "Sélectionnez un type de béton",
+      "OPTION_1": "Béton 1",
+      "OPTION_2": "Béton 2",
+      "OPTION_3": "Béton 3"
+    },
     "FIELD_1": {
       "TITLE": "T° max autorisée selon le niveau de prévention",
       "UNIT": "(°C)"
@@ -67,5 +74,11 @@
       "TITLE": "Etape 6"
     }
   },
-  "CHANGE_LANG": "English version"
+  "CHANGE_LANG": "English version",
+  "GENERAL": {
+    "VALIDATE": "Valider",
+    "CANCEL": "Annuler",
+    "SELECT": "Sélectionner",
+    "CONFIRM": "Confirmer"
+  }
 }

@@ -14,6 +14,19 @@
       <ion-row>
         <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
           <ion-item class="no-padding">
+            <ion-label color="primary" stacked>{{'CALCULATOR_PAGE.SELECT_1.TITLE' | translate}}</ion-label>
+            <ion-select formControlName="select_1"
+                        placeholder="{{'GENERAL.SELECT' | translate}}"
+                        cancelText="{{'GENERAL.CANCEL' | translate}}"
+                        okText="{{'GENERAL.SELECT' | translate}}">
+              <ion-option value="1">{{'CALCULATOR_PAGE.SELECT_1.OPTION_1' | translate}}</ion-option>
+              <ion-option value="2">{{'CALCULATOR_PAGE.SELECT_1.OPTION_2' | translate}}</ion-option>
+              <ion-option value="3">{{'CALCULATOR_PAGE.SELECT_1.OPTION_3' | translate}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
+          <ion-item class="no-padding">
             <ion-label color="primary" stacked>
               {{'CALCULATOR_PAGE.FIELD_1.TITLE' | translate}}
             </ion-label>

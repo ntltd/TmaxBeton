@@ -21,6 +21,7 @@ export class CalculatorPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
 
     this.calculator = this.formBuilder.group({
+      select_1: ['', Validators.required],
       field_1: ['', Validators.required],
       field_2: ['', Validators.required],
       field_3: ['', Validators.required],

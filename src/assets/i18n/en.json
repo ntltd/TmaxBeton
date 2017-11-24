@@ -6,6 +6,12 @@
   },
   "CALCULATOR_PAGE": {
     "TITLE": "Calculator",
+    "SELECT_1": {
+      "TITLE": "Kind of Concrete",
+      "OPTION_1": "Concrete 1",
+      "OPTION_2": "Concrete 2",
+      "OPTION_3": "Concrete 3"
+    },
     "FIELD_1": {
       "TITLE": "Field 1",
       "UNIT": "Unit"
