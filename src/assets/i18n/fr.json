@@ -57,7 +57,54 @@
     }
   },
   "HISTORY_PAGE": {
-    "TITLE": "Historique"
+    "TITLE": "Historique",
+    "DESCRIPTION": "Voici la liste de résultats obtenus au cours de précédentes recherches :",
+    "DATE_OF_CALC": "Calcul réalisé le",
+    "COPY_RESULTS": "Résultats copiés dans le presse papier.",
+    "FIELD_1": {
+      "TITLE": "T° max autorisée selon le niveau de prévention",
+      "UNIT": "°C"
+    },
+    "FIELD_2": {
+      "TITLE": "Dosage en ciment du béton",
+      "UNIT": "kg/m^3"
+    },
+    "FIELD_3": {
+      "TITLE": "Dosage en addition minérale",
+      "UNIT": "kg/m^3"
+    },
+    "FIELD_4": {
+      "TITLE": "Masse volumique du béton",
+      "UNIT": "kg/m^3"
+    },
+    "FIELD_5": {
+      "TITLE": "Dosage en eau efficace du béton",
+      "UNIT": "kg/m^3"
+    },
+    "FIELD_6": {
+      "TITLE": "Résistance en compression à 2 jours du ciment",
+      "UNIT": "MPa"
+    },
+    "FIELD_7": {
+      "TITLE": "Résistance en compression à 28 jours du ciment",
+      "UNIT": "MPa"
+    },
+    "FIELD_8": {
+      "TITLE": "Chaleurs d’hydratation du ciment selon",
+      "UNIT": "kJ/kg"
+    },
+    "FIELD_9": {
+      "TITLE": "Epaisseur de la pièce",
+      "UNIT": "m"
+    },
+    "FIELD_10": {
+      "TITLE": "Delta T.",
+      "UNIT": "°C"
+    },
+    "FIELD_11": {
+      "TITLE": "T. finale",
+      "UNIT": "°C"
+    }
   },
   "METHOD_PAGE": {
     "TITLE": "Méthode",
@@ -85,6 +132,7 @@
     "VALIDATE": "Valider",
     "CANCEL": "Annuler",
     "SELECT": "Sélectionner",
-    "CONFIRM": "Confirmer"
+    "CONFIRM": "Confirmer",
+    "COPY": "Copier"
   }
 }
