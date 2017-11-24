@@ -2,7 +2,13 @@
   "APP_TITLE": "Tmax Béton",
   "HOME_PAGE": {
     "TITLE": "Accueil",
-    "DESCRIPTION": "Description"
+    "DESCRIPTION": "Description",
+    "CREDENTIALS": {
+      "REALIZATION": "Cette application a été réalisée par",
+      "JUNIOR_ESIEE": "Junior ESIEE",
+      "DEVELOPMENT": "et développée par",
+      "DEVELOPER": "Nicolas TALTAUD"
+    }
   },
   "CALCULATOR_PAGE": {
     "TITLE": "Calculateur",
