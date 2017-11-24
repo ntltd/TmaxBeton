@@ -1,45 +1,46 @@
 {
   "APP_TITLE": "Tmax Béton",
   "HOME_PAGE": {
-    "TITLE": "Accueil"
+    "TITLE": "Accueil",
+    "DESCRIPTION": "Description"
   },
   "CALCULATOR_PAGE": {
     "TITLE": "Calculateur",
     "FIELD_1": {
-      "TITLE": "Field 1",
-      "UNIT": "Unit"
+      "TITLE": "T° max autorisée selon le niveau de prévention",
+      "UNIT": "(°C)"
     },
     "FIELD_2": {
-      "TITLE": "Field 2",
-      "UNIT": "Unit"
+      "TITLE": "Dosage en ciment du béton",
+      "UNIT": "(kg/m^3)"
     },
     "FIELD_3": {
-      "TITLE": "Field 3",
-      "UNIT": "Unit"
+      "TITLE": "Dosage en addition minérale",
+      "UNIT": "(kg/m^3)"
     },
     "FIELD_4": {
-      "TITLE": "Field 4",
-      "UNIT": "Unit"
+      "TITLE": "Masse volumique du béton",
+      "UNIT": "(kg/m^3)"
     },
     "FIELD_5": {
-      "TITLE": "Field 5",
-      "UNIT": "Unit"
+      "TITLE": "Dosage en eau efficace du béton",
+      "UNIT": "(kg/m^3)"
     },
     "FIELD_6": {
-      "TITLE": "Field 6",
-      "UNIT": "Unit"
+      "TITLE": "Résistance en compression à 2 jours du ciment",
+      "UNIT": "(MPa)"
     },
     "FIELD_7": {
-      "TITLE": "Field 7",
-      "UNIT": "Unit"
+      "TITLE": "Résistance en compression à 28 jours du ciment",
+      "UNIT": "(MPa)"
     },
     "FIELD_8": {
-      "TITLE": "Field 8",
-      "UNIT": "Unit"
+      "TITLE": "Chaleurs d’hydratation du ciment selon",
+      "UNIT": "(kJ/kg)"
     },
     "FIELD_9": {
-      "TITLE": "Field 9",
-      "UNIT": "Unit"
+      "TITLE": "Epaisseur de la pièce",
+      "UNIT": "(m)"
     }
   },
   "HISTORY_PAGE": {
