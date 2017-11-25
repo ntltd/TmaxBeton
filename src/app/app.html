@@ -20,7 +20,7 @@
   <ion-footer>
     <ion-item>
       <ion-label>{{'CHANGE_LANG' | translate}}</ion-label>
-      <ion-toggle (click)="translateApp()" checked="{{switchLang}}"></ion-toggle>
+      <ion-toggle (ionChange)="translateApp()" checked="{{switchLang}}"></ion-toggle>
     </ion-item>
   </ion-footer>
 

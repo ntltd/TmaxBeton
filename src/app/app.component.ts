@@ -17,7 +17,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
   activePage: any;
-  switchLang: boolean;
+  switchLang: boolean = false;
 
   pages: Array<{ title: string, component: any, icon: string, category: string, selected: boolean }>;
 
