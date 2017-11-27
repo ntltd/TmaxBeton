@@ -1,13 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
-
-/**
- * Generated class for the CalculatorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Storage} from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -16,9 +10,12 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 })
 export class CalculatorPage {
 
-  private calculator : FormGroup;
+  private calculator: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private formBuilder: FormBuilder,
+              private storage: Storage) {
 
     this.calculator = this.formBuilder.group({
       select_1: ['', Validators.required],
@@ -35,8 +32,9 @@ export class CalculatorPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CalculatorPage');
+  //TODO: store result to storage
+  storeResult() {
+    this.storage.set('name', 'Max');
   }
 
 }
