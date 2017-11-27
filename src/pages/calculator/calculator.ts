@@ -3,6 +3,8 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {Storage} from '@ionic/storage';
 
+import {ResultPage} from '../result/result';
+
 @IonicPage()
 @Component({
   selector: 'page-calculator',
@@ -37,4 +39,14 @@ export class CalculatorPage {
     this.storage.set('name', 'Max');
   }
 
+  pushToResultPage(parameters: any) {
+    this.navCtrl.push(ResultPage, {
+      //params: parameters
+    });
+  }
+
+  //TODO: calculate function
+  calculate(fields: any) {
+
+  }
 }

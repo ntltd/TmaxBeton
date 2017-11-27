@@ -109,7 +109,11 @@
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <button ion-button float-right type="submit" [disabled]="!calculator.valid">Submit</button>
+          <button ion-button float-right type="submit"
+                  [disabled]="!calculator.valid"
+                  (click)="pushToResultPage()">
+            {{'CALCULATOR_PAGE.BUTTON_CALCULATE' | translate}}
+          </button>
         </ion-col>
       </ion-row>
     </ion-grid>

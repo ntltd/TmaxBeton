@@ -11,6 +11,7 @@ import {HomePage} from '../pages/home/home';
 import {MethodPage} from '../pages/method/method';
 import {HistoryPage} from '../pages/history/history';
 import {CalculatorPage} from '../pages/calculator/calculator';
+import {ResultPage} from '../pages/result/result';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -27,6 +28,7 @@ export function createTranslateLoader(http: Http) {
     MethodPage,
     HistoryPage,
     CalculatorPage,
+    ResultPage
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ export function createTranslateLoader(http: Http) {
     MethodPage,
     HistoryPage,
     CalculatorPage,
+    ResultPage
   ],
   providers: [
     StatusBar,

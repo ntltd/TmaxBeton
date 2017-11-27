@@ -47,7 +47,8 @@
     "FIELD_9": {
       "TITLE": "Field 9",
       "UNIT": "Unit"
-    }
+    },
+    "BUTTON_CALCULATE": "Calculate"
   },
   "HISTORY_PAGE": {
     "TITLE": "Historic",
@@ -119,6 +120,9 @@
     "STEP_6": {
       "TITLE": "Step 6"
     }
+  },
+  "RESULT_PAGE": {
+    "TITLE": "Result"
   },
   "CHANGE_LANG": "Version Anglaise",
   "GENERAL": {

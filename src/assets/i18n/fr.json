@@ -54,7 +54,8 @@
     "FIELD_9": {
       "TITLE": "Epaisseur de la pièce",
       "UNIT": "(m)"
-    }
+    },
+    "BUTTON_CALCULATE": "Calculer"
   },
   "HISTORY_PAGE": {
     "TITLE": "Historique",
@@ -126,6 +127,9 @@
     "STEP_6": {
       "TITLE": "Etape 6"
     }
+  },
+  "RESULT_PAGE": {
+    "TITLE": "Résultat"
   },
   "CHANGE_LANG": "English version",
   "GENERAL": {
