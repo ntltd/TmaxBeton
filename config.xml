@@ -3,7 +3,7 @@
     <name>Tmax Béton</name>
     <description>Esitimateur de température</description>
     <author email="nicolas.taltaud@gmail.com" href="https://nicolastaltaud.fr/">Nicolas Taltaud</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.101:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
