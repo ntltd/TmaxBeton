@@ -5,48 +5,70 @@
     "DESCRIPTION": "Description"
   },
   "CALCULATOR_PAGE": {
-    "TITLE": "Calculator",
-    "SELECT_1": {
-      "TITLE": "Kind of Concrete",
-      "OPTION_1": "Concrete 1",
-      "OPTION_2": "Concrete 2",
-      "OPTION_3": "Concrete 3"
+    "TITLE": "Calculateur",
+    "SELECT_CEM": {
+      "TITLE": "Type de Béton",
+      "SELECTED_TEXT": "Sélectionnez un type de béton",
+      "OPTION_1": "CEM I",
+      "OPTION_2": "CEM II",
+      "OPTION_3": "CEM II",
+      "OPTION_4": "CEM V"
     },
-    "FIELD_1": {
-      "TITLE": "Field 1",
-      "UNIT": "Unit"
+    "FIELD_TLIM": {
+      "TITLE": "Température max autorisée Tlimite",
+      "UNIT": "(°C)"
     },
-    "FIELD_2": {
-      "TITLE": "Field 2",
-      "UNIT": "Unit"
+    "FIELD_C": {
+      "TITLE": "Dosage en ciment du béton",
+      "UNIT": "(kg/m^3)"
     },
-    "FIELD_3": {
-      "TITLE": "Field 3",
-      "UNIT": "Unit"
+    "FIELD_FS": {
+      "TITLE": "Addition en fumée de silice",
+      "UNIT": "(kg/m^3)"
     },
-    "FIELD_4": {
-      "TITLE": "Field 4",
-      "UNIT": "Unit"
+    "FIELD_MK": {
+      "TITLE": "Addtion en métakoalin",
+      "UNIT": "(kg/m^3)"
     },
-    "FIELD_5": {
-      "TITLE": "Field 5",
-      "UNIT": "Unit"
+    "FIELD_AS": {
+      "TITLE": "Addition en calcaires et silicieuses",
+      "UNIT": "(kg/m^3)"
     },
-    "FIELD_6": {
-      "TITLE": "Field 6",
-      "UNIT": "Unit"
+    "FIELD_CV": {
+      "TITLE": "Addition en cendres volantes",
+      "UNIT": "(kg/m^3)"
     },
-    "FIELD_7": {
-      "TITLE": "Field 7",
-      "UNIT": "Unit"
+    "FIELD_LA": {
+      "TITLE": "Addtion en laitiers",
+      "UNIT": "(kg/m^3)"
     },
-    "FIELD_8": {
-      "TITLE": "Field 8",
-      "UNIT": "Unit"
+    "FIELD_MV": {
+      "TITLE": "Masse volumique du béton",
+      "UNIT": "(kg/m^3)"
     },
-    "FIELD_9": {
-      "TITLE": "Field 9",
-      "UNIT": "Unit"
+    "FIELD_EEFF": {
+      "TITLE": "Dosage en eau efficace du béton",
+      "UNIT": "(l)"
+    },
+    "FIELD_RC2": {
+      "TITLE": "Résistance en compression à 2 jours du ciment",
+      "UNIT": "(MPa)"
+    },
+    "FIELD_RC28": {
+      "TITLE": "Résistance en compression à 28 jours du ciment",
+      "UNIT": "(MPa)"
+    },
+    "FIELD_Q120": {
+      "TITLE": "Q120",
+      "UNIT": ""
+    },
+    "FIELD_Q41": {
+      "TITLE": "Q41",
+      "UNIT": ""
+    },
+    "FIELD_EP": {
+      "TITLE": "Épaisseur de la pièce",
+      "UNIT": "(m)"
     },
     "BUTTON_CALCULATE": "Calculate"
   },
