@@ -13,6 +13,8 @@ import {ResultPage} from '../result/result';
 export class CalculatorPage {
 
   private calculator: FormGroup;
+  public test: any;
+  public isAdditions = false;
   public Qm: number;
   public LEch: number;
   public coefReduc: number;
@@ -31,23 +33,31 @@ export class CalculatorPage {
               private storage: Storage) {
 
     this.calculator = this.formBuilder.group({
-      select_CEM: ['', Validators.required],
-      field_TLIM: ['', Validators.required],
-      field_C: ['', Validators.required],
+      select_CEM: ['0', [Validators.required, Validators.pattern('[1-4]')]],
+      field_TLIM: ['0', Validators.required],
+      field_C: ['0', Validators.required],
       field_FS: [''],
       field_MK: [''],
       field_AS: [''],
       field_CV: [''],
       field_LA: [''],
-      field_MV: ['', Validators.required],
-      field_EEFF: ['', Validators.required],
-      field_RC2: ['', Validators.required],
-      field_RC28: ['', Validators.required],
+      field_MV: ['0', Validators.required],
+      field_EEFF: ['0', Validators.required],
+      field_RC2: ['0', Validators.required],
+      field_RC28: ['0', Validators.required],
       field_Q120: ['0', Validators.required],
-      field_Q41: ['', Validators.required],
-      field_EP: ['', Validators.required],
+      field_Q41: ['0', Validators.required],
+      field_EP: ['0', Validators.required],
     });
 
+  }
+
+  displayAdditions() {
+    this.isAdditions = !this.isAdditions;
+  }
+
+  replaceEmptyField() {
+    console.log(this.inputVariables.length);
   }
 
   //TODO: store result to storage
@@ -63,32 +73,50 @@ export class CalculatorPage {
 
   //TODO: calculate function
   calculate() {
-    this.inputVariables.CEM = !this.calculator.value.select_CEM;
-    this.inputVariables.TLIM = !this.calculator.value.field_TLIM;
-    this.inputVariables.C = !this.calculator.value.field_C;
-    this.inputVariables.FS = !this.calculator.value.field_FS;
-    this.inputVariables.MK = !this.calculator.value.field_MK;
-    this.inputVariables.AS = !this.calculator.value.field_AS;
-    this.inputVariables.CV = !this.calculator.value.field_CV;
-    this.inputVariables.LA = !this.calculator.value.field_LA;
-    this.inputVariables.MV = !this.calculator.value.field_MV;
-    this.inputVariables.EEFF = !this.calculator.value.field_EEFF;
-    this.inputVariables.RC2 = !this.calculator.value.field_RC2;
-    this.inputVariables.RC28 = !this.calculator.value.field_RC28;
-    this.inputVariables.Q120 = !this.calculator.value.field_Q120;
-    this.inputVariables.Q41 = !this.calculator.value.field_Q41;
-    this.inputVariables.EP = !this.calculator.value.field_EP;
+    if (this.calculator.value.select_CEM != "")
+      this.inputVariables.CEM = this.calculator.value.select_CEM;
+    if (this.calculator.value.field_TLIM != "")
+      this.inputVariables.TLIM = this.calculator.value.field_TLIM;
+    if (this.calculator.value.field_C != "")
+      this.inputVariables.C = this.calculator.value.field_C;
+    if (this.calculator.value.field_FS != "")
+      this.inputVariables.FS = this.calculator.value.field_FS;
+    if (this.calculator.value.field_MK != "")
+      this.inputVariables.MK = this.calculator.value.field_MK;
+    if (this.calculator.value.field_AS != "")
+      this.inputVariables.AS = this.calculator.value.field_AS;
+    if (this.calculator.value.field_CV != "")
+      this.inputVariables.CV = this.calculator.value.field_CV;
+    if (this.calculator.value.field_LA != "")
+      this.inputVariables.LA = this.calculator.value.field_LA;
+    if (this.calculator.value.field_MV != "")
+      this.inputVariables.MV = this.calculator.value.field_MV;
+    if (this.calculator.value.field_EEFF != "")
+      this.inputVariables.EEFF = this.calculator.value.field_EEFF;
+    if (this.calculator.value.field_RC2 != "")
+      this.inputVariables.RC2 = this.calculator.value.field_RC2;
+    if (this.calculator.value.field_RC28 != "")
+      this.inputVariables.RC28 = this.calculator.value.field_RC28;
+    if (this.calculator.value.field_Q120 != "")
+      this.inputVariables.Q120 = this.calculator.value.field_Q120;
+    if (this.calculator.value.field_Q41 != "")
+      this.inputVariables.Q41 = this.calculator.value.field_Q41;
+    if (this.calculator.value.field_EP != "")
+      this.inputVariables.EP = this.calculator.value.field_EP;
 
     console.log(this.inputVariables);
+    this.replaceEmptyField();
+
+    return;
   }
 
   // Estimation du dégagement de chaleur à l’infini pour le ciment retenu (Qm)
-  degagementChaleurInfini(Q120: number, Q41: number, RC2: number, RC28: number, CEMType: number) {
+  degagementChaleurInfini(Q120: number, Q41: number, RC2: number, RC28: number, CEMType: string) {
     let Qm;
     if (Q120 == 0 || !Q120) {
       Qm = Math.max(Q41, Q41 * (1.71 - 1.16 * (RC2 / RC28)));
     }
-    else if (CEMType == 1 || CEMType == 2) {
+    else if (CEMType == "1" || CEMType == "2") {
       Qm = 1.05 * Q120;
     }
     else {

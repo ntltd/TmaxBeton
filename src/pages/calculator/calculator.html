@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-  <form [formGroup]="calculator" (ngSubmit)="logForm()">
+  <form [formGroup]="calculator" (ngSubmit)="calculate()">
     <ion-grid class="no-padding">
       <ion-row>
         <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
@@ -22,7 +22,7 @@
               <ion-option value="1">{{'CALCULATOR_PAGE.SELECT_CEM.OPTION_1' | translate}}</ion-option>
               <ion-option value="2">{{'CALCULATOR_PAGE.SELECT_CEM.OPTION_2' | translate}}</ion-option>
               <ion-option value="3">{{'CALCULATOR_PAGE.SELECT_CEM.OPTION_3' | translate}}</ion-option>
-              <ion-option value="3">{{'CALCULATOR_PAGE.SELECT_CEM.OPTION_4' | translate}}</ion-option>
+              <ion-option value="4">{{'CALCULATOR_PAGE.SELECT_CEM.OPTION_4' | translate}}</ion-option>
             </ion-select>
           </ion-item>
         </ion-col>
@@ -44,48 +44,63 @@
                        placeholder="{{'CALCULATOR_PAGE.FIELD_C.UNIT' | translate}}"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-          <ion-item class="no-padding">
-            <ion-label color="primary" stacked>
+        <ion-col col-12 (click)="displayAdditions()" class="background-lite" margin-top>
+          <ion-label class="text-md-primary" [class.undisplayed-section]="isAdditions" no-margin>
+            {{'CALCULATOR_PAGE.SHOW_ADDITIONS' | translate}}
+            <ion-icon name="arrow-dropdown" class="dropdown-arrow"></ion-icon>
+          </ion-label>
+          <ion-label class="text-md-primary" [class.undisplayed-section]="!isAdditions" no-margin>
+            {{'CALCULATOR_PAGE.HIDE_ADDITIONS' | translate}}
+            <ion-icon name="arrow-dropup" class="dropdown-arrow"></ion-icon>
+          </ion-label>
+        </ion-col>
+        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 [class.undisplayed-section]="!isAdditions"
+                 class="background-lite">
+          <ion-item class="no-padding background-lite">
+            <ion-label color="primary" stacked class="background-lite">
               {{'CALCULATOR_PAGE.FIELD_FS.TITLE' | translate}}
             </ion-label>
-            <ion-input type="number" formControlName="field_FS"
+            <ion-input type="number" formControlName="field_FS" class="background-lite"
                        placeholder="{{'CALCULATOR_PAGE.FIELD_FS.UNIT' | translate}}"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-          <ion-item class="no-padding">
-            <ion-label color="primary" stacked>
+        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 [class.undisplayed-section]="!isAdditions"
+                 class="background-lite">
+          <ion-item class="no-padding background-lite">
+            <ion-label color="primary" stacked class="background-lite">
               {{'CALCULATOR_PAGE.FIELD_MK.TITLE' | translate}}
             </ion-label>
-            <ion-input type="number" formControlName="field_MK"
+            <ion-input type="number" formControlName="field_MK" class="background-lite"
                        placeholder="{{'CALCULATOR_PAGE.FIELD_MK.UNIT' | translate}}"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-          <ion-item class="no-padding">
-            <ion-label color="primary" stacked>
+        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 [class.undisplayed-section]="!isAdditions"
+                 class="background-lite">
+          <ion-item class="no-padding background-lite">
+            <ion-label color="primary" stacked class="background-lite">
               {{'CALCULATOR_PAGE.FIELD_AS.TITLE' | translate}}
             </ion-label>
-            <ion-input type="number" formControlName="field_AS"
+            <ion-input type="number" formControlName="field_AS" class="background-lite"
                        placeholder="{{'CALCULATOR_PAGE.FIELD_AS.UNIT' | translate}}"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-          <ion-item class="no-padding">
-            <ion-label color="primary" stacked>
+        <ion-col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 [class.undisplayed-section]="!isAdditions"
+                 class="background-lite">
+          <ion-item class="no-padding background-lite">
+            <ion-label color="primary" stacked class="background-lite">
               {{'CALCULATOR_PAGE.FIELD_CV.TITLE' | translate}}
             </ion-label>
-            <ion-input type="number" formControlName="field_CV"
+            <ion-input type="number" formControlName="field_CV" class="background-lite"
                        placeholder="{{'CALCULATOR_PAGE.FIELD_CV.UNIT' | translate}}"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4>
-          <ion-item class="no-padding">
-            <ion-label color="primary" stacked>
+        <ion-col col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 [class.undisplayed-section]="!isAdditions"
+                 class="background-lite">
+          <ion-item class="no-padding background-lite">
+            <ion-label color="primary" stacked class="background-lite">
               {{'CALCULATOR_PAGE.FIELD_LA.TITLE' | translate}}
             </ion-label>
-            <ion-input type="number" formControlName="field_LA"
+            <ion-input type="number" formControlName="field_LA" class="background-lite"
                        placeholder="{{'CALCULATOR_PAGE.FIELD_LA.UNIT' | translate}}"></ion-input>
           </ion-item>
         </ion-col>
@@ -156,8 +171,7 @@
       <ion-row>
         <ion-col col-12>
           <button ion-button float-right type="submit"
-                  [disabled]="!calculator.valid"
-                  (click)="calculate()">
+                  [disabled]="!calculator.valid">
             {{'CALCULATOR_PAGE.BUTTON_CALCULATE' | translate}}
           </button>
         </ion-col>

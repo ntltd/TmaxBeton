@@ -54,7 +54,7 @@
     },
     "FIELD_EEFF": {
       "TITLE": "Dosage en eau efficace du béton",
-      "UNIT": "(l)"
+      "UNIT": "(kg/m^3)"
     },
     "FIELD_RC2": {
       "TITLE": "Résistance en compression à 2 jours du ciment",
@@ -66,17 +66,19 @@
     },
     "FIELD_Q120": {
       "TITLE": "Q120",
-      "UNIT": ""
+      "UNIT": "(kJ/kg)"
     },
     "FIELD_Q41": {
       "TITLE": "Q41",
-      "UNIT": ""
+      "UNIT": "(kJ/kg)"
     },
     "FIELD_EP": {
       "TITLE": "Épaisseur de la pièce",
       "UNIT": "(m)"
     },
-    "BUTTON_CALCULATE": "Calculer"
+    "BUTTON_CALCULATE": "Calculer",
+    "SHOW_ADDITIONS": "Afficher les additions",
+    "HIDE_ADDITIONS": "Masquer les additions"
   },
   "HISTORY_PAGE": {
     "TITLE": "Historique",

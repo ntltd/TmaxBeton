@@ -10,6 +10,10 @@
   color: map_get($colors, white) !important;
 }
 
+.background-lite {
+  background: map_get($colors, light);
+}
+
 .drawer-item-highlighted {
   font-weight: 700 !important;
   color: map_get($colors, light) !important;
@@ -17,6 +21,10 @@
 
 .no-padding {
   padding: 0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -68,4 +76,14 @@ input[type=number] {
 .copy-button {
   display: inline-block !important;
   float: right;
+}
+
+// 3. CALCULATOR PAGE
+// --------------------------------------------------
+
+.displayed-section {
+  display: inherit !important;
+}
+.undisplayed-section {
+  display: none !important;
 }
