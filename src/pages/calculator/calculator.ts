@@ -31,22 +31,25 @@ export class CalculatorPage {
               private formBuilder: FormBuilder,
               private storage: Storage) {
 
+    let expRegWithoutZero = '(?!^0*$)(?!^0*\\.0*$)^\\d{1,5}(\\.\\d{1,2})?$';
+    let expRegWithZero = '^\\d{1,5}(\\.\\d{1,2})?$';
+
     this.calculator = this.formBuilder.group({
       select_CEM: ["0", [Validators.required, Validators.pattern('[1-4]')]],
-      field_TLIM: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
-      field_C: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
-      field_FS: [0, Validators.pattern('0*[0-9]\\d*')],
-      field_MK: [0, Validators.pattern('0*[0-9]\\d*')],
-      field_AS: [0, Validators.pattern('0*[0-9]\\d*')],
-      field_CV: [0, Validators.pattern('0*[0-9]\\d*')],
-      field_LA: [0, Validators.pattern('0*[0-9]\\d*')],
-      field_MV: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
-      field_EEFF: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
-      field_RC2: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
-      field_RC28: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
-      field_Q120: [0, [Validators.required, Validators.pattern('0*[0-9]\\d*')]],
-      field_Q41: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
-      field_EP: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_TLIM: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_C: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_FS: [0, Validators.pattern(expRegWithZero)],
+      field_MK: [0, Validators.pattern(expRegWithZero)],
+      field_AS: [0, Validators.pattern(expRegWithZero)],
+      field_CV: [0, Validators.pattern(expRegWithZero)],
+      field_LA: [0, Validators.pattern(expRegWithZero)],
+      field_MV: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_EEFF: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_RC2: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_RC28: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_Q120: [0, [Validators.required, Validators.pattern(expRegWithZero)]],
+      field_Q41: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_EP: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
     });
 
   }
