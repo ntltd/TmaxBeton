@@ -1,8 +1,14 @@
 {
   "APP_TITLE": "Tmax Concrete",
   "HOME_PAGE": {
-    "TITLE": "Home",
-    "DESCRIPTION": "Description"
+    "TITLE": "Credentials",
+    "DESCRIPTION": "Description",
+    "CREDENTIALS": {
+      "REALIZATION": "This application had been made by",
+      "JUNIOR_ESIEE": "Junior ESIEE",
+      "DEVELOPMENT": "and developed by",
+      "DEVELOPER": "Nicolas TALTAUD"
+    }
   },
   "CALCULATOR_PAGE": {
     "TITLE": "Calculator",

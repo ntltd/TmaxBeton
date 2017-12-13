@@ -15,7 +15,7 @@ import {CalculatorPage} from '../pages/calculator/calculator';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = CalculatorPage;
   activePage: any;
   switchLang: boolean = false;
 
@@ -38,13 +38,6 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       {
-        title: 'HOME_PAGE.TITLE',
-        component: HomePage,
-        icon: 'home',
-        category: 'general',
-        selected: false
-      },
-      {
         title: 'CALCULATOR_PAGE.TITLE',
         component: CalculatorPage,
         icon: 'calculator',
@@ -62,6 +55,13 @@ export class MyApp {
         title: 'HISTORY_PAGE.TITLE',
         component: HistoryPage,
         icon: 'time',
+        category: 'general',
+        selected: false
+      },
+      {
+        title: 'HOME_PAGE.TITLE',
+        component: HomePage,
+        icon: 'information-circle',
         category: 'general',
         selected: false
       }
