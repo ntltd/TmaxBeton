@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the MethodPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {MethodDocPage} from '../method-doc/method-doc';
+
 
 @IonicPage()
 @Component({
@@ -20,6 +16,10 @@ export class MethodPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.formulae="`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`";
+  }
+
+  pushMethodDocPage() {
+    this.navCtrl.push(MethodDocPage, {});
   }
 
   ionViewDidEnter() {

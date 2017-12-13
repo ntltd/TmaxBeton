@@ -45,16 +45,16 @@ export class MyApp {
         selected: false
       },
       {
-        title: 'METHOD_PAGE.TITLE',
-        component: MethodPage,
-        icon: 'cog',
+        title: 'HISTORY_PAGE.TITLE',
+        component: HistoryPage,
+        icon: 'time',
         category: 'general',
         selected: false
       },
       {
-        title: 'HISTORY_PAGE.TITLE',
-        component: HistoryPage,
-        icon: 'time',
+        title: 'METHOD_PAGE.TITLE',
+        component: MethodPage,
+        icon: 'cog',
         category: 'general',
         selected: false
       },

@@ -1,7 +1,7 @@
 {
   "APP_TITLE": "Tmax Béton",
   "HOME_PAGE": {
-    "TITLE": "Crédits",
+    "TITLE": "A propos",
     "DESCRIPTION": "Description",
     "CREDENTIALS": {
       "REALIZATION": "Cette application a été réalisée par",
@@ -81,7 +81,7 @@
     "HIDE_ADDITIONS": "Masquer les additions"
   },
   "HISTORY_PAGE": {
-    "TITLE": "Historique",
+    "TITLE": "Historique des calculs",
     "DESCRIPTION": "Voici la liste de résultats obtenus au cours de précédentes recherches :",
     "DATE_OF_CALC": "Calcul réalisé le",
     "COPY_RESULTS": "Résultats copiés dans le presse papier.",
@@ -132,25 +132,20 @@
     "WARNING_PHRASE": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur Tini_max, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
   },
   "METHOD_PAGE": {
-    "TITLE": "Méthode",
-    "STEP_1": {
-      "TITLE": "Etape 1"
+    "TITLE": "Méthode de calcul",
+    "TEXT": {
     },
-    "STEP_2": {
-      "TITLE": "Etape 2"
-    },
-    "STEP_3": {
-      "TITLE": "Etape 3"
-    },
-    "STEP_4": {
-      "TITLE": "Etape 4"
-    },
-    "STEP_5": {
-      "TITLE": "Etape 5"
-    },
-    "STEP_6": {
-      "TITLE": "Etape 6"
+    "BUTTONS": {
+      "STEP_1": "Etape n°1 : Estimation du dégagement de chaleur à l’infini pour le ciment retenu",
+      "STEP_2": "Etape n°2 : Prise en compte des additions minérales",
+      "STEP_3": "Etape n°3 : Prise en compte de l’impact du rapport Eeff/Liant sur l’élévation de température",
+      "STEP_4": "Etape n°4 : Estimation de l’élévation de température en l’absence de déperditions thermiques",
+      "STEP_5": "Etape n°5 : Prise en compte de déperditions thermiques",
+      "STEP_6": "Etape n°6 : Estimation de la valeur maximale possible pour la température initiale du béton frais au moment du coulage"
     }
+  },
+  "METHOD_DOC_PAGE": {
+    "TITLE": "Détail de la méthode"
   },
   "RESULT_PAGE": {
     "TITLE": "Résultat"

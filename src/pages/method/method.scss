@@ -1,3 +1,18 @@
 page-method {
-
+  .button-inner {
+    flex-flow: column !important;
+  }
+  .card {
+    width: 100% !important;
+  }
+  .step:first-child {
+    margin-top: 0 !important;
+  }
+  .step:last-child {
+    margin-bottom: 0 !important;
+  }
+  .step {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 }

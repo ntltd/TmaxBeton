@@ -9,6 +9,7 @@ import {IonicStorageModule} from '@ionic/storage';
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {MethodPage} from '../pages/method/method';
+import {MethodDocPage} from '../pages/method-doc/method-doc';
 import {HistoryPage} from '../pages/history/history';
 import {CalculatorPage} from '../pages/calculator/calculator';
 import {ResultPage} from '../pages/result/result';
@@ -26,6 +27,7 @@ export function createTranslateLoader(http: Http) {
     MyApp,
     HomePage,
     MethodPage,
+    MethodDocPage,
     HistoryPage,
     CalculatorPage,
     ResultPage
@@ -50,6 +52,7 @@ export function createTranslateLoader(http: Http) {
     MyApp,
     HomePage,
     MethodPage,
+    MethodDocPage,
     HistoryPage,
     CalculatorPage,
     ResultPage

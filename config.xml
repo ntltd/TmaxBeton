@@ -111,6 +111,7 @@
     </platform>
     <preference name="windows-target-version" value="10.0" />
     <allow-navigation href="http://192.168.1.101:8100" />
+    <allow-navigation href="http://10.0.112.70:8100" />
     <engine name="android" spec="6.3.0" />
     <engine name="ios" spec="4.5.4" />
     <engine name="windows" spec="5.0.0" />
@@ -121,5 +122,4 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <plugin name="cordova-clipboard" spec="^1.1.1" />
     <plugin name="cordova-sqlite-storage" spec="^2.1.2" />
-    <allow-navigation href="http://10.0.112.70:8100" />
 </widget>
