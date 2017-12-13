@@ -5,13 +5,13 @@
     "DESCRIPTION": "Description"
   },
   "CALCULATOR_PAGE": {
-    "TITLE": "Calculateur",
+    "TITLE": "Calculator",
     "SELECT_CEM": {
       "TITLE": "Type de Béton",
       "SELECTED_TEXT": "Sélectionnez un type de béton",
       "OPTION_1": "CEM I",
       "OPTION_2": "CEM II",
-      "OPTION_3": "CEM II",
+      "OPTION_3": "CEM III",
       "OPTION_4": "CEM V"
     },
     "FIELD_TLIM": {
@@ -48,7 +48,7 @@
     },
     "FIELD_EEFF": {
       "TITLE": "Dosage en eau efficace du béton",
-      "UNIT": "(l)"
+      "UNIT": "(kg/m^3)"
     },
     "FIELD_RC2": {
       "TITLE": "Résistance en compression à 2 jours du ciment",
@@ -60,17 +60,19 @@
     },
     "FIELD_Q120": {
       "TITLE": "Q120",
-      "UNIT": ""
+      "UNIT": "(kJ/kg)"
     },
     "FIELD_Q41": {
       "TITLE": "Q41",
-      "UNIT": ""
+      "UNIT": "(kJ/kg)"
     },
     "FIELD_EP": {
       "TITLE": "Épaisseur de la pièce",
       "UNIT": "(m)"
     },
-    "BUTTON_CALCULATE": "Calculate"
+    "BUTTON_CALCULATE": "Calculate",
+    "SHOW_ADDITIONS": "Show additions",
+    "HIDE_ADDITIONS": "Hide les additions"
   },
   "HISTORY_PAGE": {
     "TITLE": "Historic",
