@@ -13,7 +13,6 @@ import {ResultPage} from '../result/result';
 export class CalculatorPage {
 
   private calculator: FormGroup;
-  public test: any;
   public isAdditions = false;
   public Qm: number;
   public LEch: number;
@@ -21,10 +20,10 @@ export class CalculatorPage {
   public deltaT: number;
   public TMax: number;
   public inputVariables: any = {
-    "CEM": "-", "TLIM": "-", "C": "-", "FS": "-",
-    "MK": "-", "AS": "-", "CV": "-", "LA": "-",
-    "MV": "-", "EEFF": "-", "RC2": "-", "RC28": "-",
-    "Q120": "-", "Q41": "-", "EP": "-"
+    "CEM": 0, "TLIM": 0, "C": 0, "FS": 0,
+    "MK": 0, "AS": 0, "CV": 0, "LA": 0,
+    "MV": 0, "EEFF": 0, "RC2": 0, "RC28": 0,
+    "Q120": 0, "Q41": 0, "EP": 0
   };
 
   constructor(public navCtrl: NavController,
@@ -33,21 +32,21 @@ export class CalculatorPage {
               private storage: Storage) {
 
     this.calculator = this.formBuilder.group({
-      select_CEM: ['0', [Validators.required, Validators.pattern('[1-4]')]],
-      field_TLIM: ['0', Validators.required],
-      field_C: ['0', Validators.required],
-      field_FS: [''],
-      field_MK: [''],
-      field_AS: [''],
-      field_CV: [''],
-      field_LA: [''],
-      field_MV: ['0', Validators.required],
-      field_EEFF: ['0', Validators.required],
-      field_RC2: ['0', Validators.required],
-      field_RC28: ['0', Validators.required],
-      field_Q120: ['0', Validators.required],
-      field_Q41: ['0', Validators.required],
-      field_EP: ['0', Validators.required],
+      select_CEM: ["0", [Validators.required, Validators.pattern('[1-4]')]],
+      field_TLIM: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_C: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_FS: [0],
+      field_MK: [0],
+      field_AS: [0],
+      field_CV: [0],
+      field_LA: [0],
+      field_MV: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_EEFF: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_RC2: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_RC28: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_Q120: [0, [Validators.required, Validators.pattern('0*[0-9]\\d*')]],
+      field_Q41: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
+      field_EP: [0, [Validators.required, Validators.pattern('0*[1-9]\\d*')]],
     });
 
   }
@@ -56,22 +55,22 @@ export class CalculatorPage {
     this.isAdditions = !this.isAdditions;
   }
 
-  replaceEmptyField() {
-    console.log(this.inputVariables.length);
-  }
-
   //TODO: store result to storage
   storeResult() {
     this.storage.set('name', 'Max');
   }
 
-  pushToResultPage(parameters: any) {
+  pushToResultPage() {
     this.navCtrl.push(ResultPage, {
-      //params: parameters
+      Qm: this.Qm,
+      LEch: this.LEch,
+      coefReduc: this.coefReduc,
+      deltaT: this.deltaT,
+      TMax: this.TMax,
+      inputVariables: this.inputVariables
     });
   }
 
-  //TODO: calculate function
   calculate() {
     if (this.calculator.value.select_CEM != "")
       this.inputVariables.CEM = this.calculator.value.select_CEM;
@@ -105,9 +104,28 @@ export class CalculatorPage {
       this.inputVariables.EP = this.calculator.value.field_EP;
 
     console.log(this.inputVariables);
-    this.replaceEmptyField();
 
-    return;
+    this.degagementChaleurInfini(this.inputVariables.Q120,
+      this.inputVariables.Q41,
+      this.inputVariables.RC2,
+      this.inputVariables.RC28,
+      this.inputVariables.CEM);
+    this.liantEquivalentChaleur(this.inputVariables.FS,
+      this.inputVariables.MK,
+      this.inputVariables.AS,
+      this.inputVariables.CV,
+      this.inputVariables.LA,
+      this.inputVariables.C,
+      this.inputVariables.EP
+    );
+    this.calculFinal(this.inputVariables.EEFF,
+      this.inputVariables.MV,
+      this.inputVariables.EP,
+      this.inputVariables.TLIM,
+      this.inputVariables.Q41
+    );
+
+    this.pushToResultPage();
   }
 
   // Estimation du dégagement de chaleur à l’infini pour le ciment retenu (Qm)
@@ -122,57 +140,62 @@ export class CalculatorPage {
     else {
       Qm = 1.15 * Q120;
     }
+    console.log("Qm:", Qm);
     this.Qm = Qm;
-    return Qm;
+    //return Qm;
   }
 
   // Calcul du liant équivalent chaleur (LEch)
-  liantEquivalentChaleur(Fs: number, Mk: number, As: number, Cv: number, La: number, C: number, Ep: number) {
+  liantEquivalentChaleur(Fs, Mk, As, Cv, La, C, Ep) {
     let res, K;
-    if (Fs && Mk && As && Cv && La == 0) {
-      return C;
+    if (Fs == 0 && Mk == 0 && As == 0 && Cv == 0 && La == 0) {
+      res = C;
     }
-    res = C + Fs + Mk + 0 * As + 1.12 * (1 - Math.exp(-Ep / 3)) * La;
-    if (Cv != 0) {
-      if (Ep <= 1) {
-        K = 0;
+    else {
+      // noinspection PointlessArithmeticExpressionJS
+      res = C + Fs + Mk + 0 * As + 1.12 * (1 - Math.exp(-Ep / 3)) * La;
+      if (Cv != 0) {
+        if (Ep <= 1) {
+          K = 0;
+        }
+        else if (1 < Ep && Ep <= 5) {
+          K = -0.0357 * (Math.pow(Ep, 2)) + 0.4143 * Ep - 0.38;
+        }
+        else if (Ep > 5) {
+          K = 0.8;
+        }
+        res += K * Cv;
       }
-      else if (1 < Ep && Ep <= 5) {
-        K = -0.0357 * (Ep ** 2) + 0.4143 * Ep - 0.38;
-      }
-      else if (Ep >= 5) {
-        K = 0.8;
-      }
-      res += K * Cv;
     }
     res = Math.round(res * 100) / 100;
     this.LEch = res;
-    console.log("Liant équivalent chaleur LEch (en kg/m3) calculé :", this.LEch);
+    console.log("Lech:", this.LEch);
   }
 
-  calculFinal(EEff: number, Mv, Ep, TLim, Q41) {
-    let R, alpha, deltaTadia, deltaT, Tini_max;
+  calculFinal(EEff, Mv, Ep, TLim, Q41) {
+    let R, alpha, deltaTadia, deltaT, Tini_max, Cth = 1;
     // Prise en compte de l’impact du rapport Eeff/Liant eq. :
-    alpha = 1.29 * (1 - Math.exp(-3.3 * (EEff / this.LEch)))
+    alpha = 1.29 * (1 - Math.exp(-3.3 * (EEff / this.LEch)));
+    console.log("Alpha:", alpha);
     // Estimation de l’élévation de température en l’absence de déperditions thermiques :
-    deltaTadia = alpha * (this.Qm * this.LEch) / Mv;
-    // Prise en compte des déperditions thermiques
+    deltaTadia = alpha * (this.Qm * this.LEch) / (Mv * Cth);
+    console.log("deltaTadia:", deltaTadia);
     if (Ep >= 5) {
-      R = 1
+      R = 1;
     }
     else {
-      R = Math.min(1, 1 / (1 + ((Math.max(0.3, -0.0057 * Q41 + 2.0558)) / Ep) ** 1.5));
+      // Prise en compte des déperditions thermiques
+      R = Math.min(1, (1 / (1 + Math.pow(((Math.max(0.3, -0.0057 * Q41 + 2.0558)) / Ep), 1.5))));
     }
-    R = Math.round(R * 100) / 100;
     this.coefReduc = R;
-    console.log("Coefficient de réduction R : ", this.coefReduc);
+    console.log("R:", this.coefReduc);
     // l’élévation de température ΔT :
-    deltaT = Math.round(R * deltaTadia);
+    deltaT = R * deltaTadia;
     this.deltaT = deltaT;
     console.log("∆T = ", this.deltaT);
     // Estimation de la valeur maximale possible pour la température initiale du béton frais au moment du coulage
     Tini_max = TLim - deltaT;
+    console.log("Tmax:", Tini_max);
     this.TMax = Math.round(Tini_max);
-    console.log("Valeur maximale possible pour la température :", this.TMax);
   }
 }
