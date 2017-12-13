@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'METHOD_MODAL_PAGE.TITLE' | translate}} {{stepNumber}}</ion-title>
+    <ion-buttons right class="margin-right-toolbar">
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row *ngIf="stepNumber == 1">
+    <ion-col>
+      Texte 1
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="stepNumber == 2">
+    <ion-col>
+      Texte 2
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="stepNumber == 3">
+    <ion-col>
+      Texte 3
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="stepNumber == 4">
+    <ion-col>
+      Texte 4
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="stepNumber == 5">
+    <ion-col>
+      Texte 5
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="stepNumber == 6">
+    <ion-col>
+      Texte 6
+    </ion-col>
+  </ion-row>
+</ion-content>

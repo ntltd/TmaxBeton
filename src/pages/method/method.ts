@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 
 import {MethodDocPage} from '../method-doc/method-doc';
+import {MethodModalPage} from '../method-modal/method-modal';
 
 
 @IonicPage()
@@ -14,8 +15,8 @@ export class MethodPage {
 
   formulae: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.formulae="`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`";
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+    this.formulae = "`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`";
   }
 
   pushMethodDocPage() {
@@ -28,6 +29,11 @@ export class MethodPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MethodPage');
+  }
+
+  openModal(step: number) {
+    let myModal = this.modalCtrl.create(MethodModalPage, {step: step});
+    myModal.present();
   }
 
 }

@@ -16,23 +16,49 @@
 <ion-content padding>
   <ion-grid no-padding>
     <ion-row>
+      <ion-col col-12>
+        <p text-justify class="no-margin-top">{{'METHOD_PAGE.TEXT.PARAGRAPH_1' | translate}}</p>
+        <p text-justify>{{'METHOD_PAGE.TEXT.PARAGRAPH_2' | translate}}</p>
+        <p text-justify>{{'METHOD_PAGE.TEXT.PARAGRAPH_3' | translate}}</p>
+        <p text-justify>{{'METHOD_PAGE.TEXT.PARAGRAPH_4' | translate}}</p>
+        <p text-justify>{{'METHOD_PAGE.TEXT.PARAGRAPH_5' | translate}}</p>
+        <p text-justify class="no-margin-bottom">{{'METHOD_PAGE.TEXT.PARAGRAPH_6' | translate}}</p>
+        <ul text-justify class="no-margin-top">
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_7' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_8' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_9' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_10' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_11' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_12' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_13' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_14' | translate}}</li>
+          <li>{{'METHOD_PAGE.TEXT.PARAGRAPH_15' | translate}}</li>
+        </ul>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <p text-justify>{{'METHOD_PAGE.TEXT.PARAGRAPH_16' | translate}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col col-12 text-center class="step">
-        <ion-card padding no-margin text-uppercase color="primary">{{'METHOD_PAGE.BUTTONS.STEP_1' | translate}}</ion-card>
+        <ion-card padding no-margin text-uppercase color="primary" (click)="openModal(1)">{{'METHOD_PAGE.BUTTONS.STEP_1' | translate}}</ion-card>
       </ion-col>
       <ion-col col-12 text-center class="step">
-        <ion-card padding no-margin text-uppercase color="primary">{{'METHOD_PAGE.BUTTONS.STEP_2' | translate}}</ion-card>
+        <ion-card padding no-margin text-uppercase color="primary" (click)="openModal(2)">{{'METHOD_PAGE.BUTTONS.STEP_2' | translate}}</ion-card>
       </ion-col>
       <ion-col col-12 text-center class="step">
-        <ion-card padding no-margin text-uppercase color="primary">{{'METHOD_PAGE.BUTTONS.STEP_3' | translate}}</ion-card>
+        <ion-card padding no-margin text-uppercase color="primary" (click)="openModal(3)">{{'METHOD_PAGE.BUTTONS.STEP_3' | translate}}</ion-card>
       </ion-col>
       <ion-col col-12 text-center class="step">
-        <ion-card padding no-margin text-uppercase color="primary">{{'METHOD_PAGE.BUTTONS.STEP_4' | translate}}</ion-card>
+        <ion-card padding no-margin text-uppercase color="primary" (click)="openModal(4)">{{'METHOD_PAGE.BUTTONS.STEP_4' | translate}}</ion-card>
       </ion-col>
       <ion-col col-12 text-center class="step">
-        <ion-card padding no-margin text-uppercase color="primary">{{'METHOD_PAGE.BUTTONS.STEP_5' | translate}}</ion-card>
+        <ion-card padding no-margin text-uppercase color="primary" (click)="openModal(5)">{{'METHOD_PAGE.BUTTONS.STEP_5' | translate}}</ion-card>
       </ion-col>
       <ion-col col-12 text-center class="step">
-        <ion-card padding no-margin text-uppercase color="primary">{{'METHOD_PAGE.BUTTONS.STEP_6' | translate}}</ion-card>
+        <ion-card padding no-margin text-uppercase color="primary" (click)="openModal(6)">{{'METHOD_PAGE.BUTTONS.STEP_6' | translate}}</ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

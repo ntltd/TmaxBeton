@@ -17,6 +17,7 @@ import {ResultPage} from '../pages/result/result';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {Clipboard} from '@ionic-native/clipboard';
+import {MethodModalPage} from "../pages/method-modal/method-modal";
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -30,7 +31,8 @@ export function createTranslateLoader(http: Http) {
     MethodDocPage,
     HistoryPage,
     CalculatorPage,
-    ResultPage
+    ResultPage,
+    MethodModalPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ export function createTranslateLoader(http: Http) {
     MethodDocPage,
     HistoryPage,
     CalculatorPage,
-    ResultPage
+    ResultPage,
+    MethodModalPage
   ],
   providers: [
     StatusBar,

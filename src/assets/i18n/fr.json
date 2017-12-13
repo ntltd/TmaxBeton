@@ -134,6 +134,22 @@
   "METHOD_PAGE": {
     "TITLE": "Méthode de calcul",
     "TEXT": {
+      "PARAGRAPH_1": "D’après les recommandations pour la prévention des désordres dus à la réaction sulfatique interne  (édition 2017, Ifsttar)",
+      "PARAGRAPH_2": "La présente section a pour objet de proposer une méthode simplifiée permettant d’évaluer en phase amont d’un projet si certaines pièces doivent être considérées comme des pièces critiques vis-à-vis des risques de formation d’ettringite différée (risques liés à une température excessive au cœur des pièces réalisées), étant donnés les principes de formulation de béton prévus au CCTP. ",
+      "PARAGRAPH_3": "Cette section permet donc une estimation de l’élévation maximale de température au cœur d’une pièce en béton pour laquelle on ne connaît que l’épaisseur (dans sa plus petite dimension) et quelques données de base sur la composition du béton. Compte tenu de la température limite Tlimite à ne pas dépasser au cœur de l’élément considéré (correspondant au niveau de prévention cherché), on en déduit la valeur maximale possible Tini_max pour la température initiale du béton frais au moment du bétonnage.",
+      "PARAGRAPH_4": "Sa précision est limitée car elle fait intervenir un nombre restreint de paramètres (connus ou facilement consultables en phase amont). Elle doit être utilisée comme un outil d’alerte, si elle conduit à conclure que la pièce est critique alors une étude plus fine doit être réalisée ou les paramètres doivent être modifiés. C’est aussi pourquoi, dans tous les exemples traités plus loin, les valeurs des températures obtenues ont été arrondies au degré le plus proche.",
+      "PARAGRAPH_5": "Données pour l’estimation de la température initiale maximale autorisée",
+      "PARAGRAPH_6": "La méthode simplifiée nécessite la détermination des paramètres suivants :",
+      "PARAGRAPH_7": "Température maximale autorisée selon le niveau de prévention Tlimite (en °C) – cf. chapitre 3 des recommandations",
+      "PARAGRAPH_8": "Dosage en ciment du béton C (en kg/m3)",
+      "PARAGRAPH_9": "Dosage en addition minérale A (en kg/m3)",
+      "PARAGRAPH_10": "Masse volumique du béton Mv (en kg/m3)",
+      "PARAGRAPH_11": "Dosage en eau efficace Eeff du béton (en kg/m3)",
+      "PARAGRAPH_12": "Résistance en compression à 2 jours du ciment Rc2 (en MPa) selon NF EN 196-1",
+      "PARAGRAPH_13": "Résistance en compression à 28 jours du ciment Rc28 (en MPa) selon NF EN 196-1",
+      "PARAGRAPH_14": "Chaleurs d’hydratation du ciment selon NF EN 196-9 à l’échéance de 41h Q41 ou, préférablement, de 120h Q120 (en kJ/kg)",
+      "PARAGRAPH_15": "Epaisseur de la pièce EP (en m) si supérieure à 0,25 m (en deçà de cette valeur, la pièce n’est pas critique vis-à-vis des risques de formation d’ettringite différée – cf. notion de pièce critique paragraphe 1 du chapitre 1 des recommandations)",
+      "PARAGRAPH_16": "Sélectionnez une étape ci-dessous pour plus de détails :"
     },
     "BUTTONS": {
       "STEP_1": "Etape n°1 : Estimation du dégagement de chaleur à l’infini pour le ciment retenu",
@@ -146,6 +162,9 @@
   },
   "METHOD_DOC_PAGE": {
     "TITLE": "Détail de la méthode"
+  },
+  "METHOD_MODAL_PAGE": {
+    "TITLE": "Etape"
   },
   "RESULT_PAGE": {
     "TITLE": "Résultat"
