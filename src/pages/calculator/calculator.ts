@@ -39,20 +39,20 @@ export class CalculatorPage {
 
     this.calculator = this.formBuilder.group({
       select_CEM: ["0", [Validators.required, Validators.pattern('[1-4]')]],
-      field_TLIM: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_C: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_TLIM: [65, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_C: [350, [Validators.required, Validators.pattern(expRegWithoutZero)]],
       field_FS: [0, Validators.pattern(expRegWithZero)],
       field_MK: [0, Validators.pattern(expRegWithZero)],
       field_AS: [0, Validators.pattern(expRegWithZero)],
       field_CV: [0, Validators.pattern(expRegWithZero)],
       field_LA: [0, Validators.pattern(expRegWithZero)],
-      field_MV: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_EEFF: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_RC2: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_RC28: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_MV: [2400, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_EEFF: [175, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_RC2: [27, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_RC28: [68, [Validators.required, Validators.pattern(expRegWithoutZero)]],
       field_Q120: [0, [Validators.required, Validators.pattern(expRegWithZero)]],
-      field_Q41: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_EP: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_Q41: [306, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      field_EP: [1, [Validators.required, Validators.pattern(expRegWithoutZero)]],
     });
   }
 
@@ -202,6 +202,6 @@ export class CalculatorPage {
     // Estimation de la valeur maximale possible pour la température initiale du béton frais au moment du coulage
     Tini_max = TLim - deltaT;
     console.log("Tmax:", Tini_max);
-    this.TMax = Math.round(Tini_max);
+    this.TMax = Tini_max;
   }
 }

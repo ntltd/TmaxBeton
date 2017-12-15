@@ -167,7 +167,22 @@
     "TITLE": "Etape"
   },
   "RESULT_PAGE": {
-    "TITLE": "Résultat"
+    "TITLE": "Résultat",
+    "EXPLANATION": "La température initiale du béton frais au moment du bétonnage doit être égale au plus à :",
+    "PARAMS": {
+      "LABEL": "Les paramètres entrés précedemment sont les suivants :",
+      "TYPE": "Type ciment",
+      "C": "Dosage ciment",
+      "A": "Dosage additions",
+      "MV": "Masse vol. béton",
+      "EEFF": "Dosage eau efficace",
+      "RC2": "RC 2 jours ciment",
+      "RC28": "RC 28 jours ciment",
+      "Q41": "Chaleur d'hydra. 41h",
+      "Q120": "Chaleur d'hydra. 120h",
+      "EP": "Epaisseur pièce",
+      "TLIM": "T° maximale autorisée"
+    }
   },
   "CHANGE_LANG": "English version",
   "GENERAL": {

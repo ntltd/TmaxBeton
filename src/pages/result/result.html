@@ -4,5 +4,66 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-12 text-justify>
+        {{'RESULT_PAGE.EXPLANATION' | translate}}
+      </ion-col>
+      <ion-col col-12 text-center margin-top>
+        <h1 class="text-very-big" no-margin>{{TMax}}<small>°C</small></h1>
+        <small>({{currentTime}})</small>
+      </ion-col>
+    </ion-row>
+    <ion-row margin-top>
+      <ion-col col-12 text-justify>
+        {{'RESULT_PAGE.PARAMS.LABEL' | translate}}
+      </ion-col>
+    </ion-row>
+    <ion-row margin-top>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.TYPE' | translate}}</p>
+        <h3 class="no-margin-top">{{CEM}}</h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.C' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.C}}<small>kg/m<sup>3</sup></small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.A' | translate}}</p>
+        <h3 class="no-margin-top">{{sumAdditions}}<small>kg/m<sup>3</sup></small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.MV' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.MV}}<small>kg/m<sup>3</sup></small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.EEFF' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.EEFF}}<small>kg/m<sup>3</sup></small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.RC2' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.RC2}}<small>MPa</small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.RC28' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.RC28}}<small>MPa</small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.Q41' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.Q41}}<small>kJ/kg</small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.Q120' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.Q120}}<small>kJ/kg</small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.EP' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.EP}}<small>m</small></h3>
+      </ion-col>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+        <p no-margin>{{'RESULT_PAGE.PARAMS.TLIM' | translate}}</p>
+        <h3 class="no-margin-top">{{inputVariables.TLIM}}<small>°C</small></h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
