@@ -13,15 +13,15 @@
   "CALCULATOR_PAGE": {
     "TITLE": "Calculateur",
     "SELECT_CEM": {
-      "TITLE": "Type de Béton",
-      "SELECTED_TEXT": "Sélectionnez un type de béton",
+      "TITLE": "Type de ciment",
+      "SELECTED_TEXT": "Sélectionnez un type de ciment",
       "OPTION_1": "CEM I",
       "OPTION_2": "CEM II",
       "OPTION_3": "CEM III",
       "OPTION_4": "CEM V"
     },
     "FIELD_TLIM": {
-      "TITLE": "Température max autorisée Tlimite",
+      "TITLE": "Température maximale autorisée",
       "UNIT": "(°C)"
     },
     "FIELD_C": {
@@ -33,11 +33,11 @@
       "UNIT": "(kg/m^3)"
     },
     "FIELD_MK": {
-      "TITLE": "Addtion en métakoalin",
+      "TITLE": "Addition en métakaolin",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_AS": {
-      "TITLE": "Addition en calcaires et silicieuses",
+      "TITLE": "Addition en calcaire et silice",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_CV": {

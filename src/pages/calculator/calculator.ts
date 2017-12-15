@@ -5,6 +5,8 @@ import {Storage} from '@ionic/storage';
 
 import {ResultPage} from '../result/result';
 
+import moment from 'moment';
+
 @IonicPage()
 @Component({
   selector: 'page-calculator',
@@ -19,6 +21,7 @@ export class CalculatorPage {
   public coefReduc: number;
   public deltaT: number;
   public TMax: number;
+  public currentTime: any;
   public inputVariables: any = {
     "CEM": 0, "TLIM": 0, "C": 0, "FS": 0,
     "MK": 0, "AS": 0, "CV": 0, "LA": 0,
@@ -51,7 +54,6 @@ export class CalculatorPage {
       field_Q41: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
       field_EP: [0, [Validators.required, Validators.pattern(expRegWithoutZero)]],
     });
-
   }
 
   displayAdditions() {
@@ -65,6 +67,7 @@ export class CalculatorPage {
 
   pushToResultPage() {
     this.navCtrl.push(ResultPage, {
+      currentTime: this.currentTime,
       Qm: this.Qm,
       LEch: this.LEch,
       coefReduc: this.coefReduc,
@@ -106,8 +109,6 @@ export class CalculatorPage {
     if (this.calculator.value.field_EP != "")
       this.inputVariables.EP = this.calculator.value.field_EP;
 
-    console.log(this.inputVariables);
-
     this.degagementChaleurInfini(this.inputVariables.Q120,
       this.inputVariables.Q41,
       this.inputVariables.RC2,
@@ -127,6 +128,8 @@ export class CalculatorPage {
       this.inputVariables.TLIM,
       this.inputVariables.Q41
     );
+
+    this.currentTime = moment();
 
     this.pushToResultPage();
   }
