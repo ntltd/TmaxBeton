@@ -34,17 +34,17 @@ export class ResultPage {
     this.currentTime = this.navParams.get('currentTime').locale(this.localeAdaptations.lang).format('LLL');
     this.inputVariables = this.navParams.get('inputVariables');
 
-    switch (this.inputVariables.CEM){
-      case 1:
+    switch (this.inputVariables.CEM.toString()){
+      case "1":
         this.CEM = "CEM I";
         break;
-      case 2:
+      case "2":
         this.CEM = "CEM II";
         break;
-      case 3:
+      case "3":
         this.CEM = "CEM III";
         break;
-      case 4:
+      case "4":
         this.CEM = "CEM V";
         break;
       default:
@@ -57,7 +57,7 @@ export class ResultPage {
   }
 
   setAccordingToLang() {
-    let currentLanguage = this.translateService.getDefaultLang(), setLanguage;
+    let currentLanguage = this.translateService.getDefaultLang();
     switch (currentLanguage) {
       case 'fr':
         this.localeAdaptations.lang = "fr";

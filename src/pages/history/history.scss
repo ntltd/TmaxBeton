@@ -4,4 +4,7 @@ page-history {
     font-size: 3em;
     font-weight: bolder;
   }
+  .card-margin-bottom:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }

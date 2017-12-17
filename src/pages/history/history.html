@@ -11,21 +11,28 @@
 <ion-content padding>
   <ion-grid no-padding>
     <ion-row>
-      <ion-col col-12 text-left>
-        {{'HISTORY_PAGE.DESCRIPTION' | translate}}
+      <ion-col col-12 text-justify>
+        {{'HISTORY_PAGE.DESCRIPTION.PART_1' | translate}}&nbsp;{{results.length}}&nbsp;{{'HISTORY_PAGE.DESCRIPTION.PART_2' | translate}}
       </ion-col>
     </ion-row>
-    <ion-row margin-top>
-      <ion-col col-12>
+    <ion-row>
+      <ion-col col-12 text-center *ngIf="!isResults">
+        {{'HISTORY_PAGE.NO_RESULTS' | translate}}
+      </ion-col>
+    </ion-row>
+    <ion-row margin-top *ngIf="isResults">
+      <ion-col col-12 *ngFor="let result of results" class="card-margin-bottom">
         <ion-card no-margin style="width: 100% !important;">
           <ion-card-content class="background-primary">
             <ion-grid no-padding>
               <ion-row>
                 <ion-col col-12 text-center>
-                  <h1 class="text-big">15,5<small>°C</small></h1>
+                  <h1 class="text-big">
+                    {{roundResult(result.data.TMax)}}<small>°C</small>
+                  </h1>
                 </ion-col>
                 <ion-col col-12 text-center no-padding>
-                  (11/11/11)
+                  {{showCorrectDate(result.currentTime)}}
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -38,7 +45,7 @@
               </button>
             </ion-col>
             <ion-col col-6 text-center>
-              <button ion-button icon-left clear small>
+              <button ion-button icon-left clear small (click)="pushToResultPage(result)">
                 <ion-icon name="more"></ion-icon>
                 <div>{{'GENERAL.DETAILS' | translate}}</div>
               </button>
@@ -47,11 +54,6 @@
         </ion-card>
       </ion-col>
     </ion-row>
-    <!-- ion-row margin-top>
-      <ion-col text-justify>
-        <small class="text-grey"><ion-icon name="warning"></ion-icon> {{'GENERAL.WARNING_PHRASE' | translate}}</small>
-      </ion-col>
-    </ion-row -->
   </ion-grid>
 
 </ion-content>

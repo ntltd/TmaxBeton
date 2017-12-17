@@ -60,12 +60,62 @@ export class CalculatorPage {
     this.isAdditions = !this.isAdditions;
   }
 
-  //TODO: store result to storage
   storeResult() {
-    this.storage.set('name', 'Max');
+
+    let currentResult = {
+      'currentTime': this.currentTime.format(),
+      'data': {
+        'Qm': this.Qm,
+        'LEch': this.LEch,
+        'coefReduc': this.coefReduc,
+        'deltaT': this.deltaT,
+        'TMax': this.TMax,
+        'inputVariables': this.inputVariables
+      }
+    };
+
+    this.storage.get('results').then((val) => {
+      if (!val || val === null) {
+        console.log('Pas de résultats précédemment enregistrés');
+        this.storage.set('results', new Array(currentResult));
+      }
+      else {
+        console.log('Résultats trouvés', val);
+        let results = val;
+        if (val.length < 10) {
+          results.push(currentResult);
+          this.storage.set('results', results);
+        }
+        else {
+          let times = [
+            results[0].currentTime,
+            results[1].currentTime,
+            results[2].currentTime,
+            results[3].currentTime,
+            results[4].currentTime,
+            results[5].currentTime,
+            results[6].currentTime,
+            results[7].currentTime,
+            results[8].currentTime,
+            results[9].currentTime
+          ];
+          let oldestMoment = moment(times[0]);
+          for (let i = 0; i < times.length; i++){
+            oldestMoment = moment.min(oldestMoment, moment(times[i]));
+          }
+          console.log("oldestMoment:", oldestMoment);
+          let position = times.indexOf(oldestMoment.format());
+          console.log("position:", position);
+          results[position] = currentResult;
+          this.storage.set('results', results);
+        }
+      }
+    });
   }
 
   pushToResultPage() {
+    this.storeResult();
+
     this.navCtrl.push(ResultPage, {
       currentTime: this.currentTime,
       Qm: this.Qm,

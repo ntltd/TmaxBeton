@@ -82,17 +82,13 @@
   },
   "HISTORY_PAGE": {
     "TITLE": "Historique des calculs",
-    "DESCRIPTION": "Voici la liste des 10 derniers résultats obtenus :",
+    "DESCRIPTION": {
+      "PART_1": "Voici la liste des",
+      "PART_2": "derniers résultats obtenus :"
+    },
     "DATE_OF_CALC": "Calcul réalisé le",
     "COPY_RESULTS": "Résultats copiés dans le presse papier.",
-    "FIELD_10": {
-      "TITLE": "Delta T.",
-      "UNIT": "°C"
-    },
-    "FIELD_11": {
-      "TITLE": "T. finale",
-      "UNIT": "°C"
-    }
+    "NO_RESULTS": "Pas de résultats à afficher."
   },
   "METHOD_PAGE": {
     "TITLE": "Méthode de calcul",
