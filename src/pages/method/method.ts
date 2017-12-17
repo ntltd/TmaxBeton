@@ -13,10 +13,9 @@ import {MethodModalPage} from '../method-modal/method-modal';
 
 export class MethodPage {
 
-  formulae: string;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
-    this.formulae = "`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`";
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public modalCtrl: ModalController) {
   }
 
   pushMethodDocPage() {
@@ -25,10 +24,6 @@ export class MethodPage {
 
   ionViewDidEnter() {
     eval('MathJax.Hub.Queue(["Typeset", MathJax.Hub])');
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MethodPage');
   }
 
   openModal(step: number) {

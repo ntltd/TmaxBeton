@@ -106,7 +106,7 @@
       "PARAGRAPH_13": "Résistance en compression à 28 jours du ciment Rc28 (en MPa) selon NF EN 196-1",
       "PARAGRAPH_14": "Chaleurs d’hydratation du ciment selon NF EN 196-9 à l’échéance de 41h Q41 ou, préférablement, de 120h Q120 (en kJ/kg)",
       "PARAGRAPH_15": "Epaisseur de la pièce EP (en m) si supérieure à 0,25 m (en deçà de cette valeur, la pièce n’est pas critique vis-à-vis des risques de formation d’ettringite différée – cf. notion de pièce critique paragraphe 1 du chapitre 1 des recommandations)",
-      "PARAGRAPH_16": "Sélectionnez une étape ci-dessous pour plus de détails :"
+      "PARAGRAPH_16": "Sélectionnez une étape pour plus de détails :"
     },
     "BUTTONS": {
       "STEP_1": "Etape n°1 : Estimation du dégagement de chaleur à l’infini pour le ciment retenu",
@@ -121,7 +121,50 @@
     "TITLE": "Détail de la méthode"
   },
   "METHOD_MODAL_PAGE": {
-    "TITLE": "Etape"
+    "TITLE": "Etape",
+    "STEP_1": {
+      "TITLE": "Estimation du dégagement de chaleur à l’infini Qm pour le ciment retenu",
+      "PARAGRAPH_1": "Deux cas sont considérés ici : soit la chaleur Q120 est disponible soit seulement la chaleur Q41 est disponible. Si Q120 est disponible, on privilégiera cette donnée dans l’estimation de la chaleur à l’infini du ciment.  ",
+      "PARAGRAPH_2": "L’estimation de la chaleur à l’infini du ciment Qm (en kJ/kg) est obtenue au moyen des formules suivantes :",
+      "PARAGRAPH_3": "pour les ciments CEM I et CEM II :",
+      "PARAGRAPH_4": "pour les ciments CEM III et CEM V :",
+      "PARAGRAPH_5": "Ou bien si Q120 n’est pas disponible :",
+      "PARAGRAPH_6": "Où la valeur ratio_Qm/Q41 est donnée par l’équation suivante sur la base du rapport Rc2/Rc28 :",
+      "PARAGRAPH_7": "La figure 1 illustre cette relation :",
+      "PARAGRAPH_8": "Figure 1 : relation Qm/Q41 fonction de Rc2/Rc28 (équation 4)",
+      "PARAGRAPH_9": "Nota : les ciments CEM IV ne sont pas considérés dans cette annexe en raison de l'absence de ce type de ciment en France et donc de données les concernant. Ils sortent donc du champ d’application de l’annexe."
+    },
+    "STEP_2": {
+      "TITLE": "Prise en compte des additions minérales",
+      "PARAGRAPH_1": "Les additions participent au dégagement de chaleur du béton. Pour les prendre en compte, on introduit un liant équivalent chaleur noté LEch (en kg/m3) par la formule :",
+      "PARAGRAPH_2": "où",
+      "PARAGRAPH_3": "Ai est le dosage en addition i",
+      "PARAGRAPH_4": "K’i le coefficient de pondération de l’addition i donné par les équations suivantes :",
+      "PARAGRAPH_5": "cas de la fumée de silice K’fs= 1",
+      "PARAGRAPH_6": "cas du métakaolin K’m= 1",
+      "PARAGRAPH_7": "cas des additions calcaires et des additions siliceuses, K’a= 0",
+      "PARAGRAPH_8": "cas des cendres volantes :",
+      "PARAGRAPH_9": "cas des laitiers : ",
+      "PARAGRAPH_10": "En l’absence d’addition, on prend : LEch = C.",
+      "PARAGRAPH_11": "La figure 2 donne l’évolution des coefficients de pondération des additions en fonction de l’épaisseur.",
+      "PARAGRAPH_12": "Figure 2 : coefficient K’ des additions pour le calcul du liant équivalent chaleur LEch en fonction de l’épaisseur de la pièce EP"
+    },
+    "STEP_3": {
+      "TITLE": "Prise en compte de l’impact du rapport Eeff/Liant équivalent",
+      "PARAGRAPH_1": ""
+    },
+    "STEP_4": {
+      "TITLE": "Estimation de l’élévation de température en l’absence de déperditions thermiques",
+      "PARAGRAPH_1": ""
+    },
+    "STEP_5": {
+      "TITLE": "Prise en compte des déperditions thermiques",
+      "PARAGRAPH_1": ""
+    },
+    "STEP_6": {
+      "TITLE": "Estimation de la valeur maximale possible pour la température initiale du béton frais au moment du coulage",
+      "PARAGRAPH_1": ""
+    }
   },
   "RESULT_PAGE": {
     "TITLE": "Résultat",

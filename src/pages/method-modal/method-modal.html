@@ -13,32 +13,89 @@
 <ion-content padding>
   <ion-row *ngIf="stepNumber == 1">
     <ion-col>
-      Texte 1
+      <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_1.TITLE' | translate}}</h2>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_1' | translate}}</p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_2' | translate}}</p>
+      <ul>
+        <li>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_3' | translate}}</li>
+      </ul>
+      <p text-center>{{step_1_formulas[0].formulae}}&emsp;<small>{{step_1_formulas[0].name}}</small>
+      </p>
+      <ul text-justify>
+        <li>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_4' | translate}}</li>
+      </ul>
+      <p text-center>{{step_1_formulas[1].formulae}}&emsp;<small>{{step_1_formulas[1].name}}</small>
+      </p>
+      <p>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_5' | translate}}</p>
+      <p text-center>{{step_1_formulas[2].formulae}}&emsp;<small>{{step_1_formulas[2].name}}</small>
+      </p>
+      <p>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_6' | translate}}</p>
+      <p text-center>{{step_1_formulas[3].formulae}}&emsp;<small>{{step_1_formulas[3].name}}</small>
+      </p>
+      <p>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_7' | translate}}</p>
+      <p text-center><img class="img-graph" src="assets/imgs/graphs/ratio_qm_q41.png"/><br>
+        <small>{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_8' | translate}}</small>
+      </p>
+      <p text-justify class="no-margin-bottom">{{'METHOD_MODAL_PAGE.STEP_1.PARAGRAPH_9' | translate}}</p>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 2">
     <ion-col>
-      Texte 2
+      <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_2.TITLE' | translate}}</h2>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_1' | translate}}</p>
+      <p text-center>{{step_2_formulas[0].formulae}}&emsp;<small>{{step_1_formulas[0].name}}</small>
+      </p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_2' | translate}}</p>
+      <ul text-justify>
+        <li>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_3' | translate}}</li>
+        <li>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_4' | translate}}</li>
+        <li style="list-style-type: none !important;">
+          <ul>
+            <li text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_5' | translate}}</li>
+            <li text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_6' | translate}}</li>
+            <li text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_7' | translate}}</li>
+            <li text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_8' | translate}}</li>
+          </ul>
+        </li>
+      </ul>
+      <p text-center>
+        <small>{{step_2_formulas[1].formulae}}</small>&emsp;<small>{{step_1_formulas[1].name}}</small>
+      </p>
+      <ul>
+        <li style="list-style-type: none !important;">
+          <ul>
+            <li text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_9' | translate}}</li>
+          </ul>
+        </li>
+      </ul>
+      <p text-center>
+        {{step_2_formulas[2].formulae}}&emsp;<small>{{step_1_formulas[2].name}}</small>
+      </p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_10' | translate}}</p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_11' | translate}}</p>
+      <p text-center  class="no-margin-bottom"><img class="img-graph" src="assets/imgs/graphs/coeff_k_prim.png"/><br>
+        <small>{{'METHOD_MODAL_PAGE.STEP_2.PARAGRAPH_12' | translate}}</small>
+      </p>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 3">
     <ion-col>
-      Texte 3
+      <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_3.TITLE' | translate}}</h2>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 4">
     <ion-col>
-      Texte 4
+      <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_4.TITLE' | translate}}</h2>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 5">
     <ion-col>
-      Texte 5
+      <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_5.TITLE' | translate}}</h2>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 6">
     <ion-col>
-      Texte 6
+      <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_6.TITLE' | translate}}</h2>
     </ion-col>
   </ion-row>
 </ion-content>
