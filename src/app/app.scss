@@ -10,8 +10,16 @@
   color: map_get($colors, white) !important;
 }
 
-.background-lite {
-  background: map_get($colors, light);
+.background-lite-grey {
+  background: map_get($colors, light-grey);
+}
+
+.text-grey {
+  color: map_get($colors, grey);
+}
+
+.text-warning {
+  color: map_get($colors, warning);
 }
 
 .drawer-item-highlighted {
@@ -42,7 +50,7 @@ input[type=number] {
 }
 
 .drawer-logo {
-  background-color: map_get($colors, light) !important;
+  background-color: map_get($colors, light-grey) !important;
   padding: 8px;
 }
 

@@ -82,7 +82,7 @@
   },
   "HISTORY_PAGE": {
     "TITLE": "Historique des calculs",
-    "DESCRIPTION": "Voici la liste de résultats obtenus au cours de précédentes recherches :",
+    "DESCRIPTION": "Voici la liste des 10 derniers résultats obtenus :",
     "DATE_OF_CALC": "Calcul réalisé le",
     "COPY_RESULTS": "Résultats copiés dans le presse papier.",
     "FIELD_1": {
@@ -128,8 +128,7 @@
     "FIELD_11": {
       "TITLE": "T. finale",
       "UNIT": "°C"
-    },
-    "WARNING_PHRASE": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur Tini_max, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
+    }
   },
   "METHOD_PAGE": {
     "TITLE": "Méthode de calcul",
@@ -190,6 +189,7 @@
     "CANCEL": "Annuler",
     "SELECT": "Sélectionner",
     "CONFIRM": "Confirmer",
-    "COPY": "Copier"
+    "COPY": "Copier",
+    "WARNING_PHRASE": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur de la température initiale maximale autorisée, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
   }
 }
