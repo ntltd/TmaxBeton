@@ -79,6 +79,12 @@ export class HistoryPage {
     });
   }
 
+  resetLocalStorage(){
+    this.results = new Array([]);
+    this.isResults = false;
+    this.storage.clear();
+  }
+
   copyToClipBoard() {
     this.clipboard.copy('[DATE]');
   }

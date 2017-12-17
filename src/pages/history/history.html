@@ -12,12 +12,15 @@
   <ion-grid no-padding>
     <ion-row>
       <ion-col col-12 text-justify>
-        {{'HISTORY_PAGE.DESCRIPTION.PART_1' | translate}}&nbsp;{{results.length}}&nbsp;{{'HISTORY_PAGE.DESCRIPTION.PART_2' | translate}}
+        {{'HISTORY_PAGE.DESCRIPTION' | translate}}
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col col-12 text-center *ngIf="!isResults">
-        {{'HISTORY_PAGE.NO_RESULTS' | translate}}
+    <ion-row margin-top *ngIf="!isResults">
+      <ion-col col-12 text-center>
+        <span ion-text color="grey">
+          <ion-icon name="information-circle"></ion-icon>&nbsp;
+          {{'HISTORY_PAGE.NO_RESULTS' | translate}}
+        </span>
       </ion-col>
     </ion-row>
     <ion-row margin-top *ngIf="isResults">
@@ -52,6 +55,13 @@
             </ion-col>
           </ion-row>
         </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row margin-top class="text-grey">
+      <ion-col col-12 text-center *ngIf="isResults">
+        <span text-uppercase ion-text color="primary" (click)="resetLocalStorage()">
+        <ion-icon name="trash"></ion-icon>&nbsp;{{'HISTORY_PAGE.CLEAR' | translate}}
+        </span>
       </ion-col>
     </ion-row>
   </ion-grid>
