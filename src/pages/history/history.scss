@@ -7,4 +7,33 @@ page-history {
   .card-margin-bottom:not(:last-child) {
     margin-bottom: 16px;
   }
+
+  /* $grid-breakpoints 	( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px */
+  @media screen and (min-width: map_get($grid-breakpoints, md)) and (max-width: map_get($grid-breakpoints, lg)) {
+    .card-margin-responsive:nth-child(odd) {
+      padding-right: 8px !important;
+    }
+    .card-margin-responsive:nth-child(even) {
+      padding-left: 8px !important;
+    }
+  }
+  @media screen and (min-width: map_get($grid-breakpoints, lg)) {
+    .card-margin-responsive:first-child,
+    .card-margin-responsive:nth-child(4),
+    .card-margin-responsive:nth-child(7),
+    .card-margin-responsive:nth-child(10) {
+      padding-right: 8px !important;
+    }
+    .card-margin-responsive:nth-child(2),
+    .card-margin-responsive:nth-child(5),
+    .card-margin-responsive:nth-child(8) {
+      padding-right: 8px !important;
+      padding-left: 8px !important;
+    }
+    .card-margin-responsive:nth-child(3),
+    .card-margin-responsive:nth-child(6),
+    .card-margin-responsive:nth-child(9) {
+      padding-left: 8px !important;
+    }
+  }
 }

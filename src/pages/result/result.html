@@ -66,7 +66,14 @@
       </ion-col>
     </ion-row>
     <ion-row margin-top>
-      <ion-col text-justify>
+      <ion-col col-12 text-center>
+        <button ion-button color="primary" (click)="copyResults()">
+          {{'GENERAL.COPY' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row margin-top>
+      <ion-col col-12 text-justify>
         <small class="text-grey"><ion-icon name="warning"></ion-icon> {{'GENERAL.WARNING_PHRASE' | translate}}</small>
       </ion-col>
     </ion-row>

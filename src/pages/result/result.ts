@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {TranslateService} from "@ngx-translate/core";
+import {Clipboard} from "@ionic-native/clipboard";
 
 @IonicPage()
 @Component({
@@ -22,7 +23,10 @@ export class ResultPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private translateService: TranslateService) {
+              private translateService: TranslateService,
+              public toastCtrl: ToastController,
+              public plt: Platform,
+              private clipboard: Clipboard) {
 
     this.setAccordingToLang();
 
@@ -72,5 +76,83 @@ export class ResultPage {
         this.localeAdaptations.separator = ",";
         break;
     }
+  }
+
+  copyToClipBoard() {
+
+    // TODO: links to App Stores
+    let platform, lienStore;
+    if (this.plt.is('ios')) {
+      platform = "iOS";
+      lienStore = "https://www.appstore.com/";
+    }
+    else if (this.plt.is('windows')) {
+      platform = "Windows";
+      lienStore = "https://www.microsoft.com/store/apps";
+    }
+    else {
+      platform = "Android";
+      lienStore = "https://play.google.com/";
+    }
+
+    let finalClipboard = "Tmax = " + (Math.round(Number(this.TMax) * 100) / 100).toString().replace(".", this.localeAdaptations.separator) + "°C" + "\n"
+      + "\n"
+      + "Ciment : " + this.typeCEM(this.inputVariables.CEM) + "" + "\n"
+      + "C = " + this.inputVariables.C + "kg/m3" + "\n"
+      + "A = " + (this.inputVariables.FS + this.inputVariables.AS + this.inputVariables.MK + this.inputVariables.LA + this.inputVariables.CV) + "kg/m3" + "\n"
+      + "Mv = " + this.inputVariables.MV + "kg/m3" + "\n"
+      + "Eeff = " + this.inputVariables.EEFF + "kg/m3" + "\n"
+      + "RC2 = " + this.inputVariables.RC2 + "MPa" + "\n"
+      + "RC28 = " + this.inputVariables.RC28 + "MPa" + "\n"
+      + "Q41 = " + this.inputVariables.Q41 + "kJ/kg" + "\n"
+      + "Q120 = " + this.inputVariables.Q120 + "kJ/kg" + "\n"
+      + "Ep = " + this.inputVariables.EP + "m" + "\n"
+      + "Tlim = " + this.inputVariables.TLIM + "°C" + "\n"
+      + "\n"
+      + "Via Tmax Béton sur " + platform + "\n"
+      + lienStore;
+
+    this.clipboard.copy(finalClipboard);
+  }
+
+  typeCEM(CEM) {
+    let typeCEM;
+    switch (CEM.toString()) {
+      case "1":
+        typeCEM = "CEM I";
+        break;
+      case "2":
+        typeCEM = "CEM II";
+        break;
+      case "3":
+        typeCEM = "CEM III";
+        break;
+      case "4":
+        typeCEM = "CEM V";
+        break;
+      default:
+        typeCEM = "CEM I";
+        break;
+    }
+    return typeCEM;
+  }
+
+  copyResults() {
+    this.translateService.getDefaultLang();
+    this.translateService.get('HISTORY_PAGE.COPY_RESULTS').subscribe(
+      value => {
+        this.copyToClipBoard();
+        let alertTitle = value;
+        this.presentToast(alertTitle);
+      }
+    )
+  }
+
+  presentToast(messageToShow: string) {
+    let toast = this.toastCtrl.create({
+      message: messageToShow,
+      duration: 3000
+    });
+    toast.present();
   }
 }

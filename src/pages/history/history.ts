@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {TranslateService} from '@ngx-translate/core';
 import {Clipboard} from '@ionic-native/clipboard';
 import {Storage} from '@ionic/storage';
@@ -25,7 +25,8 @@ export class HistoryPage {
               public translate: TranslateService,
               private clipboard: Clipboard,
               private storage: Storage,
-              private translateService: TranslateService) {
+              private translateService: TranslateService,
+              public plt: Platform) {
 
     this.setAccordingToLang();
     this.getResult();
@@ -39,11 +40,11 @@ export class HistoryPage {
     toast.present();
   }
 
-  roundResult(result){
-    return (Math.round(result*100)/100).toString().replace(".", this.localeAdaptations.separator);
+  roundResult(n) {
+    return (Math.round(n * 100) / 100).toString().replace(".", this.localeAdaptations.separator);
   }
 
-  showCorrectDate(date){
+  showCorrectDate(date) {
     return moment(date).locale(this.localeAdaptations.lang).format('LLL');
   }
 
@@ -72,28 +73,83 @@ export class HistoryPage {
       }
       else {
         this.results = val.sort(function (a, b) {
-          return - moment.utc(a.currentTime).diff(moment.utc(b.currentTime))
+          return -moment.utc(a.currentTime).diff(moment.utc(b.currentTime))
         });
         this.isResults = true;
       }
     });
   }
 
-  resetLocalStorage(){
+  resetLocalStorage() {
     this.results = new Array([]);
     this.isResults = false;
     this.storage.clear();
   }
 
-  copyToClipBoard() {
-    this.clipboard.copy('[DATE]');
+  copyToClipBoard(result) {
+
+    // TODO: links to App Stores
+    let platform, lienStore;
+    if (this.plt.is('ios')) {
+      platform = "iOS";
+      lienStore = "https://www.appstore.com/";
+    }
+    else if (this.plt.is('windows')) {
+      platform = "Windows";
+      lienStore = "https://www.microsoft.com/store/apps";
+    }
+    else {
+      platform = "Android";
+      lienStore = "https://play.google.com/";
+    }
+
+    let finalClipboard = "Tmax = " + (Math.round(result.data.TMax * 100) / 100).toString().replace(".", this.localeAdaptations.separator) + "°C" + "\n"
+      + "\n"
+      + "Ciment : " + this.typeCEM(result.data.inputVariables.CEM) + "" + "\n"
+      + "C = " + result.data.inputVariables.C + "kg/m3" + "\n"
+      + "A = " + (result.data.inputVariables.FS + result.data.inputVariables.AS + result.data.inputVariables.MK + result.data.inputVariables.LA + result.data.inputVariables.CV) + "kg/m3" + "\n"
+      + "Mv = " + result.data.inputVariables.MV + "kg/m3" + "\n"
+      + "Eeff = " + result.data.inputVariables.EEFF + "kg/m3" + "\n"
+      + "RC2 = " + result.data.inputVariables.RC2 + "MPa" + "\n"
+      + "RC28 = " + result.data.inputVariables.RC28 + "MPa" + "\n"
+      + "Q41 = " + result.data.inputVariables.Q41 + "kJ/kg" + "\n"
+      + "Q120 = " + result.data.inputVariables.Q120 + "kJ/kg" + "\n"
+      + "Ep = " + result.data.inputVariables.EP + "m" + "\n"
+      + "Tlim = " + result.data.inputVariables.TLIM + "°C" + "\n"
+      + "\n"
+      + "Via Tmax Béton sur " + platform + "\n"
+      + lienStore;
+
+    this.clipboard.copy(finalClipboard);
   }
 
-  copyResults() {
+  typeCEM(CEM) {
+    let typeCEM;
+    switch (CEM.toString()) {
+      case "1":
+        typeCEM = "CEM I";
+        break;
+      case "2":
+        typeCEM = "CEM II";
+        break;
+      case "3":
+        typeCEM = "CEM III";
+        break;
+      case "4":
+        typeCEM = "CEM V";
+        break;
+      default:
+        typeCEM = "CEM I";
+        break;
+    }
+    return typeCEM;
+  }
+
+  copyResults(result) {
     this.translate.getDefaultLang();
     this.translate.get('HISTORY_PAGE.COPY_RESULTS').subscribe(
       value => {
-        this.copyToClipBoard();
+        this.copyToClipBoard(result);
         let alertTitle = value;
         this.presentToast(alertTitle);
       }
