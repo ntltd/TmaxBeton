@@ -10,8 +10,6 @@ $app-direction: ltr;
 
 @import "ionic.globals";
 
-// Shared/Override Variables
-// --------------------------------------------------
 
 // Named Color Variables
 // --------------------------------------------------
@@ -28,6 +26,12 @@ $colors: (
   grey: #bdc3c7,
   white: #ffffff,
 );
+
+// Shared/Override Variables
+// --------------------------------------------------
+
+$text-input-highlight-color-valid: map_get($colors, valid);
+$text-input-highlight-color-invalid: map_get($colors, danger);
 
 // App iOS Variables
 // --------------------------------------------------

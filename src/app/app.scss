@@ -14,6 +14,11 @@
   background: map_get($colors, light-grey);
 }
 
+.background-primary {
+  background: map_get($colors, primary);
+  color: map_get($colors, white) !important;
+}
+
 .text-grey {
   color: map_get($colors, grey);
 }

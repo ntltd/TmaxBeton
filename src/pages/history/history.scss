@@ -1,3 +1,7 @@
 page-history {
-
+  .text-big {
+    color: map_get($colors, white);
+    font-size: 3em;
+    font-weight: bolder;
+  }
 }

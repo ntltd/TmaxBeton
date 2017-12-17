@@ -85,42 +85,6 @@
     "DESCRIPTION": "Voici la liste des 10 derniers résultats obtenus :",
     "DATE_OF_CALC": "Calcul réalisé le",
     "COPY_RESULTS": "Résultats copiés dans le presse papier.",
-    "FIELD_1": {
-      "TITLE": "T° max autorisée selon le niveau de prévention",
-      "UNIT": "°C"
-    },
-    "FIELD_2": {
-      "TITLE": "Dosage en ciment du béton",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_3": {
-      "TITLE": "Dosage en addition minérale",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_4": {
-      "TITLE": "Masse volumique du béton",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_5": {
-      "TITLE": "Dosage en eau efficace du béton",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_6": {
-      "TITLE": "Résistance en compression à 2 jours du ciment",
-      "UNIT": "MPa"
-    },
-    "FIELD_7": {
-      "TITLE": "Résistance en compression à 28 jours du ciment",
-      "UNIT": "MPa"
-    },
-    "FIELD_8": {
-      "TITLE": "Chaleurs d’hydratation du ciment selon",
-      "UNIT": "kJ/kg"
-    },
-    "FIELD_9": {
-      "TITLE": "Epaisseur de la pièce",
-      "UNIT": "m"
-    },
     "FIELD_10": {
       "TITLE": "Delta T.",
       "UNIT": "°C"
@@ -190,6 +154,7 @@
     "SELECT": "Sélectionner",
     "CONFIRM": "Confirmer",
     "COPY": "Copier",
+    "DETAILS": "Détails",
     "WARNING_PHRASE": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur de la température initiale maximale autorisée, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
   }
 }

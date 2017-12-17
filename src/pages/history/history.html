@@ -18,90 +18,40 @@
     <ion-row margin-top>
       <ion-col col-12>
         <ion-card no-margin style="width: 100% !important;">
-          <ion-card-header>
+          <ion-card-content class="background-primary">
             <ion-grid no-padding>
-              <ion-row align-items-center>
-                <ion-col col-8 text-start>
-                  [DATE]
+              <ion-row>
+                <ion-col col-12 text-center>
+                  <h1 class="text-big">15,5<small>°C</small></h1>
                 </ion-col>
-                <ion-col col-4 text-end (click)="copyResults()">
-                  <button ion-button small>
-                    <ion-icon name="copy"></ion-icon>&nbsp;{{'GENERAL.COPY' | translate}}
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-grid no-padding>
-              <ion-row align-items-top>
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_1.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_1.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_2.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_2.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_3.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_3.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_1.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_4.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_5.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_5.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_6.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_6.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_7.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_7.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_8.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_8.UNIT' | translate}}</ion-col>
-
-                <ion-col col-6 text-left no-padding>{{'HISTORY_PAGE.FIELD_9.TITLE' | translate}}</ion-col>
-                <ion-col col-3 text-end no-padding>0</ion-col>
-                <ion-col col-3 text-start no-padding>&nbsp;{{'HISTORY_PAGE.FIELD_9.UNIT' | translate}}</ion-col>
-              </ion-row>
-              <ion-row align-items-top margin-top>
-                <ion-col col-6 text-left no-padding>
-                  <b ion-text color="primary">{{'HISTORY_PAGE.FIELD_10.TITLE' | translate}}</b>
-                </ion-col>
-                <ion-col col-3 text-end no-padding>
-                  <b ion-text color="primary">0</b>
-                </ion-col>
-                <ion-col col-3 text-start no-padding>
-                  <b ion-text color="primary">&nbsp;{{'HISTORY_PAGE.FIELD_10.UNIT' | translate}}</b>
-                </ion-col>
-
-                <ion-col col-6 text-left no-padding>
-                  <b ion-text color="primary">{{'HISTORY_PAGE.FIELD_11.TITLE' | translate}}</b>
-                </ion-col>
-                <ion-col col-3 text-end no-padding>
-                  <b ion-text color="primary">0</b>
-                </ion-col>
-                <ion-col col-3 text-start no-padding>
-                  <b ion-text color="primary">&nbsp;{{'HISTORY_PAGE.FIELD_11.UNIT' | translate}}</b>
+                <ion-col col-12 text-center no-padding>
+                  (11/11/11)
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-card-content>
+          <ion-row align-items-center>
+            <ion-col col-6 text-center>
+              <button ion-button icon-left clear small (click)="copyResults()">
+                <ion-icon name="copy"></ion-icon>
+                <div>{{'GENERAL.COPY' | translate}}</div>
+              </button>
+            </ion-col>
+            <ion-col col-6 text-center>
+              <button ion-button icon-left clear small>
+                <ion-icon name="more"></ion-icon>
+                <div>{{'GENERAL.DETAILS' | translate}}</div>
+              </button>
+            </ion-col>
+          </ion-row>
         </ion-card>
       </ion-col>
     </ion-row>
-    <ion-row margin-top>
+    <!-- ion-row margin-top>
       <ion-col text-justify>
         <small class="text-grey"><ion-icon name="warning"></ion-icon> {{'GENERAL.WARNING_PHRASE' | translate}}</small>
       </ion-col>
-    </ion-row>
+    </ion-row -->
   </ion-grid>
 
 </ion-content>
