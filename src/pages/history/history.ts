@@ -71,7 +71,9 @@ export class HistoryPage {
         this.isResults = false;
       }
       else {
-        this.results = val;
+        this.results = val.sort(function (a, b) {
+          return - moment.utc(a.currentTime).diff(moment.utc(b.currentTime))
+        });
         this.isResults = true;
       }
     });
