@@ -151,19 +151,26 @@
     },
     "STEP_3": {
       "TITLE": "Prise en compte de l’impact du rapport Eeff/Liant équivalent",
-      "PARAGRAPH_1": ""
+      "PARAGRAPH_1": "L’élévation de température découlant de la chaleur dégagée par le liant est également fonction du rapport Eeff/Liant eq. (eau efficace sur liant équivalent) qui conditionne le taux d’hydratation maximal à long terme. « Liant eq. » est ici le liant équivalent au sens de la norme NF EN 206/CN (se rapporter à cette norme pour le détail du calcul). Plus ce rapport est faible, moins l’hydratation est complète et moindre est la chaleur dégagée. Ceci est pris en compte au travers d’un terme correctif multiplicatif α donné par la relation suivante :",
+      "PARAGRAPH_2": "La figure 3 donne la variation du terme correctif avec le rapport Eeff/Liant eq. :",
+      "PARAGRAPH_3": "Figure 3 : correction de l’élévation de température liée au rapport Eeff/Liant eq. (équation 8). La formule est calée pour ne donner aucune correction pour un rapport Eeff/Liant eq. égal à 0,45."
     },
     "STEP_4": {
       "TITLE": "Estimation de l’élévation de température en l’absence de déperditions thermiques",
-      "PARAGRAPH_1": ""
+      "PARAGRAPH_1": "A ce stade, on peut évaluer l’élévation de température ΔTadia (en °C) en conditions adiabatiques (isolation parfaite) à partir de la formule :",
+      "PARAGRAPH_2": "Où Cth est la capacité thermique du béton prise égale à 1 kJ/(kg .°C)"
     },
     "STEP_5": {
       "TITLE": "Prise en compte des déperditions thermiques",
-      "PARAGRAPH_1": ""
+      "PARAGRAPH_1": "Les déperditions thermiques dépendent en particulier de la réactivité du ciment et de l’épaisseur de la pièce (la vitesse de production de chaleur est en compétition avec la vitesse de dissipation). On obtient, avec la formule suivante, le coefficient de réduction R (compris entre 0 et 1) qui permet de prendre en compte ces déperditions, la réactivité du ciment étant exprimée au travers du Q41 :",
+      "PARAGRAPH_2": "Si l’épaisseur EP est supérieure ou égale à 5 m, on prend R = 1.",
+      "PARAGRAPH_3": "Figure 4 : coefficient de réduction R",
+      "PARAGRAPH_4": "R permet d’estimer ensuite l’élévation de température ΔT (en °C) par la formule : ΔT = R x ΔTadia"
     },
     "STEP_6": {
       "TITLE": "Estimation de la valeur maximale possible pour la température initiale du béton frais au moment du coulage",
-      "PARAGRAPH_1": ""
+      "PARAGRAPH_1": "La température initiale maximale du béton Tini_max est calculée par la formule :",
+      "PARAGRAPH_2": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur Tini_max, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
     }
   },
   "RESULT_PAGE": {

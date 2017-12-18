@@ -52,18 +52,30 @@ export class MethodModalPage {
       }
     ];
     this.step_3_formulas = [
-      "`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`"
+      {
+        name: "[eq. 8]",
+        formulae: "`alpha=1.29(1-e^(-3,3 xx E_\"eff\"/(\"Liant\"_\"eq.\")))`"
+      }
     ];
     this.step_4_formulas = [
-      "`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`"
+      {
+        name: "[eq. 9]",
+        formulae: "`DeltaT_\"adia\" = alpha xx (Q_m xx L_\"Ech\")/(C_\"th\" xx M_v)`"
+      }
     ];
     this.step_5_formulas = [
-      "`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`"
+      {
+        name: "[eq. 10]",
+        formulae_1: "`R(EP, Q_41) =`",
+        formulae_2: "`\"min\"(1;(1/(1+((\"max\"(0,3;-0.0057xxQ_41+2.0558))/\"EP\")^1.5)))`"
+      }
     ];
     this.step_6_formulas = [
-      "`sum_(i=1)^n i^3=((n(n+1))/2)^2 + [[a,b],[c,d]]`"
+      {
+        name: "[eq. 11]",
+        formulae: "`T_\"ini_max\" = T_\"limite\" – DeltaT`"
+      }
     ];
-
   }
 
   ionViewDidEnter() {

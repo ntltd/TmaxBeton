@@ -81,21 +81,44 @@
   <ion-row *ngIf="stepNumber == 3">
     <ion-col>
       <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_3.TITLE' | translate}}</h2>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_3.PARAGRAPH_1' | translate}}</p>
+      <p text-center>{{step_3_formulas[0].formulae}}&emsp;<small>{{step_3_formulas[0].name}}</small></p>
+      <p>{{'METHOD_MODAL_PAGE.STEP_3.PARAGRAPH_2' | translate}}</p>
+      <p text-center><img class="img-graph" src="assets/imgs/graphs/coeff_elev_temp.png"/><br>
+        <small>{{'METHOD_MODAL_PAGE.STEP_3.PARAGRAPH_3' | translate}}</small>
+      </p>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 4">
     <ion-col>
       <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_4.TITLE' | translate}}</h2>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_4.PARAGRAPH_1' | translate}}</p>
+      <p text-center>{{step_4_formulas[0].formulae}}&emsp;<small>{{step_4_formulas[0].name}}</small></p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_4.PARAGRAPH_2' | translate}}</p>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 5">
     <ion-col>
       <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_5.TITLE' | translate}}</h2>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_5.PARAGRAPH_1' | translate}}</p>
+      <p text-center>
+        <small>{{step_5_formulas[0].formulae_1}}</small><br>
+        <small>{{step_5_formulas[0].formulae_2}}</small><br><br>
+        <small>{{step_5_formulas[0].name}}</small>
+      </p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_5.PARAGRAPH_2' | translate}}</p>
+      <p text-center><img class="img-graph" src="assets/imgs/graphs/coeff_reduc.png"/><br>
+        <small>{{'METHOD_MODAL_PAGE.STEP_5.PARAGRAPH_3' | translate}}</small>
+      </p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_5.PARAGRAPH_4' | translate}}</p>
     </ion-col>
   </ion-row>
   <ion-row *ngIf="stepNumber == 6">
     <ion-col>
       <h2 text-justify>{{'METHOD_MODAL_PAGE.STEP_6.TITLE' | translate}}</h2>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_6.PARAGRAPH_1' | translate}}</p>
+      <p text-center>{{step_6_formulas[0].formulae}}&emsp;<small>{{step_6_formulas[0].name}}</small></p>
+      <p text-justify>{{'METHOD_MODAL_PAGE.STEP_6.PARAGRAPH_2' | translate}}</p>
     </ion-col>
   </ion-row>
 </ion-content>
