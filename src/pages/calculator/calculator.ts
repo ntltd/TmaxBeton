@@ -22,42 +22,62 @@ export class CalculatorPage {
   public deltaT: number;
   public TMax: number;
   public currentTime: any;
-  public inputVariables: any = {
-    "CEM": 0, "TLIM": 0, "C": 0, "FS": 0,
-    "MK": 0, "AS": 0, "CV": 0, "LA": 0,
-    "MV": 0, "EEFF": 0, "RC2": 0, "RC28": 0,
-    "Q120": 0, "Q41": 0, "EP": 0
+  public inputVariables= {
+    "CEM": "0", "TLIM": null, "C": null, "FS": null,
+    "MK": null, "AS": null, "CV": null, "LA": null,
+    "MV": null, "EEFF": null, "RC2": null, "RC28": null,
+    "Q120": null, "Q41": null, "EP": null
   };
+  public expRegWithoutZero = '(?!^0*$)(?!^0*\\.0*$)^\\d{1,5}(\\.\\d{1,2})?$';
+  public expRegWithZero = '^\\d{1,5}(\\.\\d{1,2})?$';
+
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private formBuilder: FormBuilder,
               private storage: Storage) {
 
-    let expRegWithoutZero = '(?!^0*$)(?!^0*\\.0*$)^\\d{1,5}(\\.\\d{1,2})?$';
-    let expRegWithZero = '^\\d{1,5}(\\.\\d{1,2})?$';
+    this.createFormBuilder();
 
+    this.getInputs();
+  }
+
+  createFormBuilder() {
     this.calculator = this.formBuilder.group({
-      select_CEM: ["0", [Validators.required, Validators.pattern('[1-4]')]],
-      field_TLIM: [65, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_C: [350, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_FS: [0, Validators.pattern(expRegWithZero)],
-      field_MK: [0, Validators.pattern(expRegWithZero)],
-      field_AS: [0, Validators.pattern(expRegWithZero)],
-      field_CV: [0, Validators.pattern(expRegWithZero)],
-      field_LA: [0, Validators.pattern(expRegWithZero)],
-      field_MV: [2400, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_EEFF: [175, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_RC2: [27, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_RC28: [68, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_Q120: [0, [Validators.required, Validators.pattern(expRegWithZero)]],
-      field_Q41: [306, [Validators.required, Validators.pattern(expRegWithoutZero)]],
-      field_EP: [1, [Validators.required, Validators.pattern(expRegWithoutZero)]],
+      select_CEM: [this.inputVariables.CEM, [Validators.required, Validators.pattern('[1-4]')]],
+      field_TLIM: [this.inputVariables.TLIM, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_C: [this.inputVariables.C, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_FS: [this.inputVariables.FS, Validators.pattern(this.expRegWithZero)],
+      field_MK: [this.inputVariables.MK, Validators.pattern(this.expRegWithZero)],
+      field_AS: [this.inputVariables.AS, Validators.pattern(this.expRegWithZero)],
+      field_CV: [this.inputVariables.CV, Validators.pattern(this.expRegWithZero)],
+      field_LA: [this.inputVariables.LA, Validators.pattern(this.expRegWithZero)],
+      field_MV: [this.inputVariables.MV, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_EEFF: [this.inputVariables.EEFF, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_RC2: [this.inputVariables.RC2, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_RC28: [this.inputVariables.RC28, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_Q120: [this.inputVariables.Q120, [Validators.required, Validators.pattern(this.expRegWithZero)]],
+      field_Q41: [this.inputVariables.Q41, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_EP: [this.inputVariables.EP, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
     });
   }
 
   displayAdditions() {
     this.isAdditions = !this.isAdditions;
+  }
+
+  getInputs() {
+    this.storage.get('inputs').then((inputs) => {
+      if (!(!inputs || inputs === null)) {
+        this.inputVariables = inputs;
+        console.log("inputs:", this.inputVariables);
+        this.createFormBuilder();
+      }
+    });
+  }
+
+  storeInputs(currentInputs) {
+    this.storage.set('inputs', currentInputs.data.inputVariables);
   }
 
   storeResult() {
@@ -73,6 +93,8 @@ export class CalculatorPage {
         'inputVariables': this.inputVariables
       }
     };
+
+    this.storeInputs(currentResult);
 
     this.storage.get('results').then((val) => {
       if (!val || val === null) {
@@ -100,7 +122,7 @@ export class CalculatorPage {
             results[9].currentTime
           ];
           let oldestMoment = moment(times[0]);
-          for (let i = 0; i < times.length; i++){
+          for (let i = 0; i < times.length; i++) {
             oldestMoment = moment.min(oldestMoment, moment(times[i]));
           }
           console.log("oldestMoment:", oldestMoment);
