@@ -85,6 +85,9 @@ export class MyApp {
   getLangPref(){
     this.storage.get('lang').then((val) => {
       this.lang = val;
+      if(!val || val === null){
+        this.lang = 'fr';
+      }
       this.translateService.setDefaultLang(this.lang);
       this.translateService.use(this.lang);
       this.isEnglishTranslation();

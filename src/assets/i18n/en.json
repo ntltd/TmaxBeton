@@ -1,27 +1,27 @@
 {
   "APP_TITLE": "Tmax Concrete",
   "HOME_PAGE": {
-    "TITLE": "Credentials",
+    "TITLE": "A propos",
     "DESCRIPTION": "Description",
     "CREDENTIALS": {
-      "REALIZATION": "This application had been made by",
+      "REALIZATION": "Cette application a été réalisée par",
       "JUNIOR_ESIEE": "Junior ESIEE",
-      "DEVELOPMENT": "and developed by",
+      "DEVELOPMENT": "et développée par",
       "DEVELOPER": "Nicolas TALTAUD"
     }
   },
   "CALCULATOR_PAGE": {
     "TITLE": "Calculator",
     "SELECT_CEM": {
-      "TITLE": "Type de Béton",
-      "SELECTED_TEXT": "Sélectionnez un type de béton",
+      "TITLE": "Type de ciment",
+      "SELECTED_TEXT": "Sélectionnez un type de ciment",
       "OPTION_1": "CEM I",
       "OPTION_2": "CEM II",
       "OPTION_3": "CEM III",
       "OPTION_4": "CEM V"
     },
     "FIELD_TLIM": {
-      "TITLE": "Température max autorisée Tlimite",
+      "TITLE": "Température maximale autorisée",
       "UNIT": "(°C)"
     },
     "FIELD_C": {
@@ -33,11 +33,11 @@
       "UNIT": "(kg/m^3)"
     },
     "FIELD_MK": {
-      "TITLE": "Addtion en métakoalin",
+      "TITLE": "Addition en métakaolin",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_AS": {
-      "TITLE": "Addition en calcaires et silicieuses",
+      "TITLE": "Addition en calcaire et silice",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_CV": {
@@ -76,90 +76,129 @@
       "TITLE": "Épaisseur de la pièce",
       "UNIT": "(m)"
     },
-    "BUTTON_CALCULATE": "Calculate",
-    "SHOW_ADDITIONS": "Show additions",
-    "HIDE_ADDITIONS": "Hide les additions"
+    "BUTTON_CALCULATE": "Calculer",
+    "SHOW_ADDITIONS": "Afficher les additions",
+    "HIDE_ADDITIONS": "Masquer les additions"
   },
   "HISTORY_PAGE": {
-    "TITLE": "Historic",
-    "DESCRIPTION": "Previous results:",
-    "DATE_OF_CALC": "Calculation done the",
-    "COPY_RESULTS": "Results copied to clipboard.",
-    "FIELD_1": {
-      "TITLE": "T° max autorisée selon le niveau de prévention",
-      "UNIT": "°C"
-    },
-    "FIELD_2": {
-      "TITLE": "Dosage en ciment du béton",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_3": {
-      "TITLE": "Dosage en addition minérale",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_4": {
-      "TITLE": "Masse volumique du béton",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_5": {
-      "TITLE": "Dosage en eau efficace du béton",
-      "UNIT": "kg/m^3"
-    },
-    "FIELD_6": {
-      "TITLE": "Résistance en compression à 2 jours du ciment",
-      "UNIT": "MPa"
-    },
-    "FIELD_7": {
-      "TITLE": "Résistance en compression à 28 jours du ciment",
-      "UNIT": "MPa"
-    },
-    "FIELD_8": {
-      "TITLE": "Chaleurs d’hydratation du ciment selon",
-      "UNIT": "kJ/kg"
-    },
-    "FIELD_9": {
-      "TITLE": "Epaisseur de la pièce",
-      "UNIT": "m"
-    },
-    "FIELD_10": {
-      "TITLE": "Delta T.",
-      "UNIT": "°C"
-    },
-    "FIELD_11": {
-      "TITLE": "T. finale",
-      "UNIT": "°C"
-    }
+    "TITLE": "Previous results",
+    "DESCRIPTION": "Vos 10 derniers résultats :",
+    "DATE_OF_CALC": "Calcul réalisé le",
+    "COPY_RESULTS": "Résultats copiés dans le presse papier.",
+    "NO_RESULTS": "Aucun résultat à afficher",
+    "CLEAR": "Vider l'historique"
   },
   "METHOD_PAGE": {
-    "TITLE": "Méthod",
-    "STEP_1":{
-      "TITLE": "Step 1"
+    "TITLE": "Method of calculation",
+    "TEXT": {
+      "PARAGRAPH_1": "D’après les recommandations pour la prévention des désordres dus à la réaction sulfatique interne  (édition 2017, IFSTTAR).",
+      "PARAGRAPH_2": "La présente section a pour objet de proposer une méthode simplifiée permettant d’évaluer en phase amont d’un projet si certaines pièces doivent être considérées comme des pièces critiques vis-à-vis des risques de formation d’ettringite différée (risques liés à une température excessive au cœur des pièces réalisées), étant donnés les principes de formulation de béton prévus au CCTP. ",
+      "PARAGRAPH_3": "Cette section permet donc une estimation de l’élévation maximale de température au cœur d’une pièce en béton pour laquelle on ne connaît que l’épaisseur (dans sa plus petite dimension) et quelques données de base sur la composition du béton. Compte tenu de la température limite Tlimite à ne pas dépasser au cœur de l’élément considéré (correspondant au niveau de prévention cherché), on en déduit la valeur maximale possible Tini_max pour la température initiale du béton frais au moment du bétonnage.",
+      "PARAGRAPH_4": "Sa précision est limitée car elle fait intervenir un nombre restreint de paramètres (connus ou facilement consultables en phase amont). Elle doit être utilisée comme un outil d’alerte, si elle conduit à conclure que la pièce est critique alors une étude plus fine doit être réalisée ou les paramètres doivent être modifiés. C’est aussi pourquoi, dans tous les exemples traités plus loin, les valeurs des températures obtenues ont été arrondies au degré le plus proche.",
+      "PARAGRAPH_5": "Données pour l’estimation de la température initiale maximale autorisée",
+      "PARAGRAPH_6": "La méthode simplifiée nécessite la détermination des paramètres suivants :",
+      "PARAGRAPH_7": "Température maximale autorisée selon le niveau de prévention Tlimite (en °C) – cf. chapitre 3 des recommandations",
+      "PARAGRAPH_8": "Dosage en ciment du béton C (en kg/m3)",
+      "PARAGRAPH_9": "Dosage en addition minérale A (en kg/m3)",
+      "PARAGRAPH_10": "Masse volumique du béton Mv (en kg/m3)",
+      "PARAGRAPH_11": "Dosage en eau efficace Eeff du béton (en kg/m3)",
+      "PARAGRAPH_12": "Résistance en compression à 2 jours du ciment Rc2 (en MPa) selon NF EN 196-1",
+      "PARAGRAPH_13": "Résistance en compression à 28 jours du ciment Rc28 (en MPa) selon NF EN 196-1",
+      "PARAGRAPH_14": "Chaleurs d’hydratation du ciment selon NF EN 196-9 à l’échéance de 41h Q41 ou, préférablement, de 120h Q120 (en kJ/kg)",
+      "PARAGRAPH_15": "Epaisseur de la pièce EP (en m) si supérieure à 0,25 m (en deçà de cette valeur, la pièce n’est pas critique vis-à-vis des risques de formation d’ettringite différée – cf. notion de pièce critique paragraphe 1 du chapitre 1 des recommandations)",
+      "PARAGRAPH_16": "Sélectionnez une étape pour plus de détails :"
     },
-    "STEP_2":{
-      "TITLE": "Step 2"
+    "BUTTONS": {
+      "STEP_1": "Etape n°1 : Estimation du dégagement de chaleur à l’infini pour le ciment retenu",
+      "STEP_2": "Etape n°2 : Prise en compte des additions minérales",
+      "STEP_3": "Etape n°3 : Prise en compte de l’impact du rapport Eeff/Liant sur l’élévation de température",
+      "STEP_4": "Etape n°4 : Estimation de l’élévation de température en l’absence de déperditions thermiques",
+      "STEP_5": "Etape n°5 : Prise en compte de déperditions thermiques",
+      "STEP_6": "Etape n°6 : Estimation de la valeur maximale possible pour la température initiale du béton frais au moment du coulage"
+    }
+  },
+  "METHOD_DOC_PAGE": {
+    "TITLE": "Details of method"
+  },
+  "METHOD_MODAL_PAGE": {
+    "TITLE": "Step",
+    "STEP_1": {
+      "TITLE": "Estimation du dégagement de chaleur à l’infini Qm pour le ciment retenu",
+      "PARAGRAPH_1": "Deux cas sont considérés ici : soit la chaleur Q120 est disponible soit seulement la chaleur Q41 est disponible. Si Q120 est disponible, on privilégiera cette donnée dans l’estimation de la chaleur à l’infini du ciment.  ",
+      "PARAGRAPH_2": "L’estimation de la chaleur à l’infini du ciment Qm (en kJ/kg) est obtenue au moyen des formules suivantes :",
+      "PARAGRAPH_3": "pour les ciments CEM I et CEM II :",
+      "PARAGRAPH_4": "pour les ciments CEM III et CEM V :",
+      "PARAGRAPH_5": "Ou bien si Q120 n’est pas disponible :",
+      "PARAGRAPH_6": "Où la valeur ratio_Qm/Q41 est donnée par l’équation suivante sur la base du rapport Rc2/Rc28 :",
+      "PARAGRAPH_7": "La figure 1 illustre cette relation :",
+      "PARAGRAPH_8": "Figure 1 : relation Qm/Q41 fonction de Rc2/Rc28 (équation 4)",
+      "PARAGRAPH_9": "Nota : les ciments CEM IV ne sont pas considérés dans cette annexe en raison de l'absence de ce type de ciment en France et donc de données les concernant. Ils sortent donc du champ d’application de l’annexe."
     },
-    "STEP_3":{
-      "TITLE": "Step 3"
+    "STEP_2": {
+      "TITLE": "Prise en compte des additions minérales",
+      "PARAGRAPH_1": "Les additions participent au dégagement de chaleur du béton. Pour les prendre en compte, on introduit un liant équivalent chaleur noté LEch (en kg/m3) par la formule :",
+      "PARAGRAPH_2": "où",
+      "PARAGRAPH_3": "Ai est le dosage en addition i",
+      "PARAGRAPH_4": "K’i le coefficient de pondération de l’addition i donné par les équations suivantes :",
+      "PARAGRAPH_5": "cas de la fumée de silice K’fs= 1",
+      "PARAGRAPH_6": "cas du métakaolin K’m= 1",
+      "PARAGRAPH_7": "cas des additions calcaires et des additions siliceuses, K’a= 0",
+      "PARAGRAPH_8": "cas des cendres volantes :",
+      "PARAGRAPH_9": "cas des laitiers : ",
+      "PARAGRAPH_10": "En l’absence d’addition, on prend : LEch = C.",
+      "PARAGRAPH_11": "La figure 2 donne l’évolution des coefficients de pondération des additions en fonction de l’épaisseur.",
+      "PARAGRAPH_12": "Figure 2 : coefficient K’ des additions pour le calcul du liant équivalent chaleur LEch en fonction de l’épaisseur de la pièce EP"
     },
-    "STEP_4":{
-      "TITLE": "Step 4"
+    "STEP_3": {
+      "TITLE": "Prise en compte de l’impact du rapport Eeff/Liant équivalent",
+      "PARAGRAPH_1": "L’élévation de température découlant de la chaleur dégagée par le liant est également fonction du rapport Eeff/Liant eq. (eau efficace sur liant équivalent) qui conditionne le taux d’hydratation maximal à long terme. « Liant eq. » est ici le liant équivalent au sens de la norme NF EN 206/CN (se rapporter à cette norme pour le détail du calcul). Plus ce rapport est faible, moins l’hydratation est complète et moindre est la chaleur dégagée. Ceci est pris en compte au travers d’un terme correctif multiplicatif α donné par la relation suivante :",
+      "PARAGRAPH_2": "La figure 3 donne la variation du terme correctif avec le rapport Eeff/Liant eq. :",
+      "PARAGRAPH_3": "Figure 3 : correction de l’élévation de température liée au rapport Eeff/Liant eq. (équation 8). La formule est calée pour ne donner aucune correction pour un rapport Eeff/Liant eq. égal à 0,45."
     },
-    "STEP_5":{
-      "TITLE": "Step 5"
+    "STEP_4": {
+      "TITLE": "Estimation de l’élévation de température en l’absence de déperditions thermiques",
+      "PARAGRAPH_1": "A ce stade, on peut évaluer l’élévation de température ΔTadia (en °C) en conditions adiabatiques (isolation parfaite) à partir de la formule :",
+      "PARAGRAPH_2": "Où Cth est la capacité thermique du béton prise égale à 1 kJ/(kg .°C)"
+    },
+    "STEP_5": {
+      "TITLE": "Prise en compte des déperditions thermiques",
+      "PARAGRAPH_1": "Les déperditions thermiques dépendent en particulier de la réactivité du ciment et de l’épaisseur de la pièce (la vitesse de production de chaleur est en compétition avec la vitesse de dissipation). On obtient, avec la formule suivante, le coefficient de réduction R (compris entre 0 et 1) qui permet de prendre en compte ces déperditions, la réactivité du ciment étant exprimée au travers du Q41 :",
+      "PARAGRAPH_2": "Si l’épaisseur EP est supérieure ou égale à 5 m, on prend R = 1.",
+      "PARAGRAPH_3": "Figure 4 : coefficient de réduction R",
+      "PARAGRAPH_4": "R permet d’estimer ensuite l’élévation de température ΔT (en °C) par la formule : ΔT = R x ΔTadia"
     },
     "STEP_6": {
-      "TITLE": "Step 6"
+      "TITLE": "Estimation de la valeur maximale possible pour la température initiale du béton frais au moment du coulage",
+      "PARAGRAPH_1": "La température initiale maximale du béton Tini_max est calculée par la formule :",
+      "PARAGRAPH_2": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur Tini_max, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
     }
   },
   "RESULT_PAGE": {
-    "TITLE": "Result"
+    "TITLE": "Result",
+    "EXPLANATION": "La température initiale du béton frais au moment du bétonnage doit être égale au plus à :",
+    "PARAMS": {
+      "LABEL": "Les paramètres entrés précedemment sont les suivants :",
+      "TYPE": "Type ciment",
+      "C": "Dosage ciment",
+      "A": "Dosage additions",
+      "MV": "Masse vol. béton",
+      "EEFF": "Dosage eau efficace",
+      "RC2": "RC 2 jours ciment",
+      "RC28": "RC 28 jours ciment",
+      "Q41": "Chaleur d'hydra. 41h",
+      "Q120": "Chaleur d'hydra. 120h",
+      "EP": "Epaisseur pièce",
+      "TLIM": "T° maximale autorisée"
+    }
   },
-  "CHANGE_LANG": "Version Anglaise",
+  "CHANGE_LANG": "English version",
   "GENERAL": {
     "VALIDATE": "Validate",
     "CANCEL": "Cancel",
     "SELECT": "Select",
-    "CONFIRM": "Ok",
-    "COPY": "Copy"
+    "CONFIRM": "Confirm",
+    "COPY": "Copy",
+    "DETAILS": "Details",
+    "WARNING_PHRASE": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur de la température initiale maximale autorisée, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
   }
 }
