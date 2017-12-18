@@ -2,7 +2,12 @@
   "APP_TITLE": "Tmax Concrete",
   "HOME_PAGE": {
     "TITLE": "A propos",
-    "DESCRIPTION": "Description",
+    "DESCRIPTION": {
+      "PARAGRAPH_1": "Cette application permet d'estimer la température maximale atteinte par le béton dans les pièces massives.",
+      "PARAGRAPH_2": "La méthode utilisée est celle présentée dans les \"Recommandations pour la prévention des désordres dus à la réaction sulfatique interne\" (guide technique IFSTTAR d'Octobre 2017).",
+      "PARAGRAPH_3": "L'application a été développée grâce au soutien de la fondation Ecole Française du Béton, fondation d'entreprise dont la mission essentielle est de faciliter la diffusion des connaissances relatives à la connaissance pratique et à la mise en œuvre du béton.",
+      "PARAGRAPH_4": "Avertissement : comme avec la méthode dont elle s'inspire, la précision obtenue à l'aide de l'application est forcément limitée. Elle ne doit donc être considérée que comme un outil d'alerte."
+    },
     "CREDENTIALS": {
       "REALIZATION": "Cette application a été réalisée par",
       "JUNIOR_ESIEE": "Junior ESIEE",
@@ -199,6 +204,6 @@
     "CONFIRM": "Confirm",
     "COPY": "Copy",
     "DETAILS": "Details",
-    "WARNING_PHRASE": "Si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur de la température initiale maximale autorisée, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
+    "WARNING_PHRASE": "Avertissement : si la valeur de la température de béton frais prévisible au moment du bétonnage dans les conditions du chantier est supérieure à la valeur de la température initiale maximale autorisée, la pièce est considérée comme critique et seule une étude plus précise peut permettre de justifier que l’échauffement sera acceptable du point de vue des risques de réaction sulfatique interne."
   }
 }
