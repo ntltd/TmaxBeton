@@ -18,7 +18,7 @@
       <ion-label><img class="drawer-flag" src="assets/imgs/flags/uk_flag.svg"
                       onerror="this.onerror=null; this.src='assets/imgs/flags/uk_flag_h110.png'">
         {{'CHANGE_LANG' | translate}}</ion-label>
-      <ion-toggle (ionChange)="translateApp()" checked="{{switchLang}}"></ion-toggle>
+      <ion-toggle (ionChange)="translateApp()" [(ngModel)]="isEnglishTranslated"></ion-toggle>
     </ion-item>
   </ion-footer>
 

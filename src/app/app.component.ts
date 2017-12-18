@@ -8,6 +8,7 @@ import {HomePage} from '../pages/home/home';
 import {MethodPage} from '../pages/method/method';
 import {HistoryPage} from '../pages/history/history';
 import {CalculatorPage} from '../pages/calculator/calculator';
+import {Storage} from "@ionic/storage";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,22 +18,22 @@ export class MyApp {
 
   rootPage: any = CalculatorPage;
   activePage: any;
-  switchLang: boolean = false;
+  lang: string = 'fr';
+  isEnglishTranslated: boolean = false;
 
   pages: Array<{ title: string, component: any, icon: string, category: string, selected: boolean }>;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
-              private translateService: TranslateService) {
+              private translateService: TranslateService,
+              private storage: Storage) {
 
     this.initializeApp();
 
     // Set default language to 'fr'
     platform.ready().then(() => {
-      translateService.setDefaultLang('fr');
-      translateService.use('fr');
-      this.switchLang = this.isEnglishTranslation();
+      this.getLangPref();
     });
 
     // used for an example of ngFor and navigation
@@ -81,6 +82,18 @@ export class MyApp {
     });
   }
 
+  getLangPref(){
+    this.storage.get('lang').then((val) => {
+      this.lang = val;
+      this.translateService.setDefaultLang(this.lang);
+      this.translateService.use(this.lang);
+      this.isEnglishTranslation();
+    });
+  }
+  setLangPref(lang){
+    this.storage.set('lang', lang);
+  }
+
   checkActivePage(page) {
     return page == this.activePage;
   }
@@ -91,8 +104,8 @@ export class MyApp {
     this.activePage = page;
   }
 
-  isEnglishTranslation(): boolean {
-    return this.translateService.getDefaultLang() == 'en';
+  isEnglishTranslation() {
+    this.isEnglishTranslated = (this.translateService.getDefaultLang() == 'en');
   }
 
   translateApp() {
@@ -108,6 +121,7 @@ export class MyApp {
         setLanguage = 'en';
         break;
     }
+    this.setLangPref(setLanguage);
     this.translateService.setDefaultLang(setLanguage);
     this.translateService.use(setLanguage);
   }
