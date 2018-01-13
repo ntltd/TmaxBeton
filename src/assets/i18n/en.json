@@ -1,7 +1,7 @@
 {
   "APP_TITLE": "Tmax Concrete",
   "HOME_PAGE": {
-    "TITLE": "A propos",
+    "TITLE": "Credentials",
     "DESCRIPTION": {
       "PARAGRAPH_1": "Cette application permet d'estimer la température maximale atteinte par le béton dans les pièces massives.",
       "PARAGRAPH_2": "La méthode utilisée est celle présentée dans les \"Recommandations pour la prévention des désordres dus à la réaction sulfatique interne\" (guide technique IFSTTAR d'Octobre 2017).",
@@ -9,64 +9,64 @@
       "PARAGRAPH_4": "Avertissement : comme avec la méthode dont elle s'inspire, la précision obtenue à l'aide de l'application est forcément limitée. Elle ne doit donc être considérée que comme un outil d'alerte."
     },
     "CREDENTIALS": {
-      "REALIZATION": "Cette application a été réalisée par",
+      "REALIZATION": "This application was made by",
       "JUNIOR_ESIEE": "Junior ESIEE",
-      "DEVELOPMENT": "et développée par",
+      "DEVELOPMENT": "and developed by",
       "DEVELOPER": "Nicolas TALTAUD"
     }
   },
   "CALCULATOR_PAGE": {
     "TITLE": "Calculator",
     "SELECT_CEM": {
-      "TITLE": "Type de ciment",
-      "SELECTED_TEXT": "Sélectionnez un type de ciment",
+      "TITLE": "Cement type",
+      "SELECTED_TEXT": "Select a type of cement",
       "OPTION_1": "CEM I",
       "OPTION_2": "CEM II",
       "OPTION_3": "CEM III",
       "OPTION_4": "CEM V"
     },
     "FIELD_TLIM": {
-      "TITLE": "Température maximale autorisée",
+      "TITLE": "Maximum allowed temperature",
       "UNIT": "(°C)"
     },
     "FIELD_C": {
-      "TITLE": "Dosage en ciment du béton",
+      "TITLE": "Cement dosage",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_FS": {
-      "TITLE": "Addition en fumée de silice",
+      "TITLE": "Silica fume",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_MK": {
-      "TITLE": "Addition en métakaolin",
+      "TITLE": "Metakaolin",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_AS": {
-      "TITLE": "Addition en calcaire et silice",
+      "TITLE": "Siliceous or calcareous filler",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_CV": {
-      "TITLE": "Addition en cendres volantes",
+      "TITLE": "Fly ash",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_LA": {
-      "TITLE": "Addtion en laitiers",
+      "TITLE": "Slag",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_MV": {
-      "TITLE": "Masse volumique du béton",
+      "TITLE": "Volumetric mass density",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_EEFF": {
-      "TITLE": "Dosage en eau efficace du béton",
+      "TITLE": "Effective water dosage",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_RC2": {
-      "TITLE": "Résistance en compression à 2 jours du ciment",
+      "TITLE": "Compressive strength of the cement at 2 days",
       "UNIT": "(MPa)"
     },
     "FIELD_RC28": {
-      "TITLE": "Résistance en compression à 28 jours du ciment",
+      "TITLE": "Compressive strength of the cement at 28 days",
       "UNIT": "(MPa)"
     },
     "FIELD_Q120": {
@@ -78,20 +78,20 @@
       "UNIT": "(kJ/kg)"
     },
     "FIELD_EP": {
-      "TITLE": "Épaisseur de la pièce",
+      "TITLE": "Notional thickness",
       "UNIT": "(m)"
     },
-    "BUTTON_CALCULATE": "Calculer",
-    "SHOW_ADDITIONS": "Afficher les additions",
-    "HIDE_ADDITIONS": "Masquer les additions"
+    "BUTTON_CALCULATE": "Calculate",
+    "SHOW_ADDITIONS": "Show mineral additions",
+    "HIDE_ADDITIONS": "Hide mineral additions"
   },
   "HISTORY_PAGE": {
     "TITLE": "Previous results",
-    "DESCRIPTION": "Vos 10 derniers résultats :",
-    "DATE_OF_CALC": "Calcul réalisé le",
-    "COPY_RESULTS": "Résultats copiés dans le presse papier.",
-    "NO_RESULTS": "Aucun résultat à afficher",
-    "CLEAR": "Vider l'historique"
+    "DESCRIPTION": "Last 10 results:",
+    "DATE_OF_CALC": "Calculated",
+    "COPY_RESULTS": "Results copied to clipboard.",
+    "NO_RESULTS": "Nothing to show.",
+    "CLEAR": "Delete list"
   },
   "METHOD_PAGE": {
     "TITLE": "Method of calculation",

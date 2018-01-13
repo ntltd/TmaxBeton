@@ -34,23 +34,23 @@
       "UNIT": "(kg/m^3)"
     },
     "FIELD_FS": {
-      "TITLE": "Addition en fumée de silice",
+      "TITLE": "Fumée de silice",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_MK": {
-      "TITLE": "Addition en métakaolin",
+      "TITLE": "Métakaolin",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_AS": {
-      "TITLE": "Addition en calcaire et silice",
+      "TITLE": "Calcaire et silice",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_CV": {
-      "TITLE": "Addition en cendres volantes",
+      "TITLE": "Cendres volantes",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_LA": {
-      "TITLE": "Addtion en laitiers",
+      "TITLE": "Laitiers",
       "UNIT": "(kg/m^3)"
     },
     "FIELD_MV": {

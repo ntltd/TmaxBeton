@@ -34,11 +34,11 @@ export class ResultPage {
     this.LEch = this.navParams.get('LEch');
     this.coefReduc = this.navParams.get('coefReduc');
     this.deltaT = this.navParams.get('deltaT');
-    this.TMax = (Math.round(this.navParams.get('TMax') * 100) / 100).toString().replace(".", this.localeAdaptations.separator);
+    this.TMax = (Math.round(this.navParams.get('TMax'))).toString().replace(".", this.localeAdaptations.separator);
     this.currentTime = this.navParams.get('currentTime').locale(this.localeAdaptations.lang).format('LLL');
     this.inputVariables = this.navParams.get('inputVariables');
 
-    switch (this.inputVariables.CEM.toString()){
+    switch (this.inputVariables.CEM.toString()) {
       case "1":
         this.CEM = "CEM I";
         break;
@@ -56,7 +56,7 @@ export class ResultPage {
         break;
     }
 
-    this.sumAdditions = this.inputVariables.FS + this.inputVariables.MK + this.inputVariables.AS + this.inputVariables.CV + this.inputVariables.LA;
+    this.sumAdditions = this.inputVariables.FS.toNumber() + this.inputVariables.AS.toNumber() + this.inputVariables.MK.toNumber() + this.inputVariables.LA.toNumber() + this.inputVariables.CV.toNumber();
 
   }
 
@@ -95,11 +95,11 @@ export class ResultPage {
       lienStore = "https://play.google.com/";
     }
 
-    let finalClipboard = "Tmax = " + (Math.round(Number(this.TMax) * 100) / 100).toString().replace(".", this.localeAdaptations.separator) + "°C" + "\n"
+    let finalClipboard = "Tmax = " + (Math.round(Number(this.TMax))).toString().replace(".", this.localeAdaptations.separator) + "°C" + "\n"
       + "\n"
       + "Ciment : " + this.typeCEM(this.inputVariables.CEM) + "" + "\n"
       + "C = " + this.inputVariables.C + "kg/m3" + "\n"
-      + "A = " + (this.inputVariables.FS + this.inputVariables.AS + this.inputVariables.MK + this.inputVariables.LA + this.inputVariables.CV) + "kg/m3" + "\n"
+      + "A = " + this.sumAdditions + "kg/m3" + "\n"
       + "Mv = " + this.inputVariables.MV + "kg/m3" + "\n"
       + "Eeff = " + this.inputVariables.EEFF + "kg/m3" + "\n"
       + "RC2 = " + this.inputVariables.RC2 + "MPa" + "\n"

@@ -228,8 +228,11 @@ export class CalculatorPage {
     let res, K;
     if (Fs == 0 && Mk == 0 && As == 0 && Cv == 0 && La == 0) {
       res = C;
+      console.log('1');
     }
     else {
+      console.log('2');
+
       // noinspection PointlessArithmeticExpressionJS
       res = C + Fs + Mk + 0 * As + 1.12 * (1 - Math.exp(-Ep / 3)) * La;
       if (Cv != 0) {
@@ -242,10 +245,11 @@ export class CalculatorPage {
         else if (Ep > 5) {
           K = 0.8;
         }
-        res += K * Cv;
+        console.log('K:', K);
+        res = res + (K * Cv);
       }
     }
-    res = Math.round(res * 100) / 100;
+    //res = Math.round(res * 100) / 100;
     this.LEch = res;
     console.log("Lech:", this.LEch);
   }
