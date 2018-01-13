@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {Validators, FormBuilder, FormGroup} from '@angular/forms';
+import {Validators, FormBuilder, FormGroup, ValidatorFn, FormControl, AbstractControl} from '@angular/forms';
 import {Storage} from '@ionic/storage';
 
 import {ResultPage} from '../result/result';
@@ -22,7 +22,7 @@ export class CalculatorPage {
   public deltaT: number;
   public TMax: number;
   public currentTime: any;
-  public inputVariables= {
+  public inputVariables = {
     "CEM": "0", "TLIM": null, "C": null, "FS": null,
     "MK": null, "AS": null, "CV": null, "LA": null,
     "MV": null, "EEFF": null, "RC2": null, "RC28": null,
@@ -56,8 +56,8 @@ export class CalculatorPage {
       field_EEFF: [this.inputVariables.EEFF, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
       field_RC2: [this.inputVariables.RC2, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
       field_RC28: [this.inputVariables.RC28, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_Q120: [this.inputVariables.Q120, [Validators.required, Validators.pattern(this.expRegWithZero)]],
       field_Q41: [this.inputVariables.Q41, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      field_Q120: [this.inputVariables.Q120, Validators.pattern(this.expRegWithoutZero)],
       field_EP: [this.inputVariables.EP, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
     });
   }
@@ -71,6 +71,15 @@ export class CalculatorPage {
       if (!(!inputs || inputs === null)) {
         this.inputVariables = inputs;
         console.log("inputs:", this.inputVariables);
+        this.createFormBuilder();
+      }
+      else {
+        this.inputVariables.MV = 2400;
+        this.inputVariables.AS = 0;
+        this.inputVariables.CV = 0;
+        this.inputVariables.LA = 0;
+        this.inputVariables.MK = 0;
+        this.inputVariables.FS = 0;
         this.createFormBuilder();
       }
     });
@@ -207,16 +216,16 @@ export class CalculatorPage {
   }
 
   // Estimation du dégagement de chaleur à l’infini pour le ciment retenu (Qm)
-  degagementChaleurInfini(Q120: number, Q41: number, RC2: number, RC28: number, CEMType: string) {
+  degagementChaleurInfini(Q120: string, Q41: number, RC2: number, RC28: number, CEMType: string) {
     let Qm;
-    if (Q120 == 0 || !Q120) {
+    if (Q120 == "" || !Q120) {
       Qm = Math.max(Q41, Q41 * (1.71 - 1.16 * (RC2 / RC28)));
     }
     else if (CEMType == "1" || CEMType == "2") {
-      Qm = 1.05 * Q120;
+      Qm = 1.05 * Number(Q120);
     }
     else {
-      Qm = 1.15 * Q120;
+      Qm = 1.15 * Number(Q120);
     }
     console.log("Qm:", Qm);
     this.Qm = Qm;
