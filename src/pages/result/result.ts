@@ -56,7 +56,7 @@ export class ResultPage {
         break;
     }
 
-    this.sumAdditions = this.inputVariables.FS.toNumber() + this.inputVariables.AS.toNumber() + this.inputVariables.MK.toNumber() + this.inputVariables.LA.toNumber() + this.inputVariables.CV.toNumber();
+    this.sumAdditions = Number(this.inputVariables.FS) + Number(this.inputVariables.AS) + Number(this.inputVariables.MK) + Number(this.inputVariables.LA) + Number(this.inputVariables.CV);
 
   }
 
