@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'GUIDE_DOC_PAGE.TITLE' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding-bottom padding-top>
+  <ion-slides pager="true" paginationType="fraction" centeredSlides="false" zoom>
+    <ion-slide *ngFor="let p of guidePages">
+      <img src="{{'assets/imgs/docs/guide/' + p + '.jpg'}}">
+    </ion-slide>
+  </ion-slides>
+</ion-content>

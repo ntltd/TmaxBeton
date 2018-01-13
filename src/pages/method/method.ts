@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams, ModalController} from 'ionic-angula
 
 import {MethodDocPage} from '../method-doc/method-doc';
 import {MethodModalPage} from '../method-modal/method-modal';
+import {GuideDocPage} from "../guide-doc/guide-doc";
 
 
 @IonicPage()
@@ -20,6 +21,10 @@ export class MethodPage {
 
   pushMethodDocPage() {
     this.navCtrl.push(MethodDocPage, {});
+  }
+
+  pushGuideDocPage() {
+    this.navCtrl.push(GuideDocPage, {});
   }
 
   ionViewDidEnter() {
