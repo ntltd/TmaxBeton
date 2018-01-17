@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {Validators, FormBuilder, FormGroup, ValidatorFn, FormControl, AbstractControl} from '@angular/forms';
+import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {Storage} from '@ionic/storage';
 
 import {ResultPage} from '../result/result';
@@ -33,7 +33,6 @@ export class CalculatorPage {
 
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams,
               private formBuilder: FormBuilder,
               private storage: Storage) {
 
@@ -187,6 +186,9 @@ export class CalculatorPage {
       this.inputVariables.RC28 = this.calculator.value.field_RC28;
     if (this.calculator.value.field_Q120 != "")
       this.inputVariables.Q120 = this.calculator.value.field_Q120;
+    else {
+      this.inputVariables.Q120 = "";
+    }
     if (this.calculator.value.field_Q41 != "")
       this.inputVariables.Q41 = this.calculator.value.field_Q41;
     if (this.calculator.value.field_EP != "")
@@ -219,7 +221,7 @@ export class CalculatorPage {
 
   // Estimation du dégagement de chaleur à l’infini pour le ciment retenu (Qm)
   degagementChaleurInfini(Q120: string, Q41: number, RC2: number, RC28: number, CEMType: string) {
-    let Qm;
+    let Qm :number;
     if (Q120 == "" || !Q120) {
       Qm = Math.max(Q41, Q41 * (1.71 - 1.16 * (RC2 / RC28)));
     }
@@ -235,50 +237,51 @@ export class CalculatorPage {
   }
 
   // Calcul du liant équivalent chaleur (LEch)
-  liantEquivalentChaleur(Fs, Mk, As, Cv, La, C, Ep) {
-    let res, K;
+  liantEquivalentChaleur(Fs: number, Mk: number, As: number, Cv: number, La: number, C: number, Ep: number) {
+    let res :number, K :number;
     if (Fs == 0 && Mk == 0 && As == 0 && Cv == 0 && La == 0) {
-      res = C;
-      console.log('1');
+      res = Number(C);
+      console.log("Pas d'additions");
     }
     else {
-      console.log('2');
+      console.log('Additions');
 
       // noinspection PointlessArithmeticExpressionJS
-      res = C + Fs + Mk + 0 * As + 1.12 * (1 - Math.exp(-Ep / 3)) * La;
+      res = Number(C) + Number(Fs) + Number(Mk) + 0 * Number(As) + 1.12 * (1 - Math.exp(-Number(Ep) / 3)) * Number(La);
       if (Cv != 0) {
         if (Ep <= 1) {
           K = 0;
         }
         else if (1 < Ep && Ep <= 5) {
-          K = -0.0357 * (Math.pow(Ep, 2)) + 0.4143 * Ep - 0.38;
+          K = -0.0357 * (Math.pow(Number(Ep), 2)) + 0.4143 * Number(Ep) - 0.38;
         }
         else if (Ep > 5) {
           K = 0.8;
         }
         console.log('K:', K);
-        res = res + (K * Cv);
+        console.log("C:", C);
+        console.log("Cv:", Cv);
+        res = Number(C) + Number(K * Cv);
       }
     }
-    //res = Math.round(res * 100) / 100;
     this.LEch = res;
     console.log("Lech:", this.LEch);
   }
 
-  calculFinal(EEff, Mv, Ep, TLim, Q41) {
-    let R, alpha, deltaTadia, deltaT, Tini_max, Cth = 1;
+  calculFinal(EEff: number, Mv: number, Ep: number, TLim: number, Q41: number) {
+    let R :number, alpha :number, deltaTadia :number, deltaT :number, Tini_max :number, Cth :number = 1;
     // Prise en compte de l’impact du rapport Eeff/Liant eq. :
-    alpha = 1.29 * (1 - Math.exp(-3.3 * (EEff / this.LEch)));
+    alpha = 1.29 * (1 - Math.exp(-3.3 * (Number(EEff) / Number(this.LEch))));
     console.log("Alpha:", alpha);
     // Estimation de l’élévation de température en l’absence de déperditions thermiques :
-    deltaTadia = alpha * (this.Qm * this.LEch) / (Mv * Cth);
+    deltaTadia = Number(alpha) * (Number(this.Qm) * Number(this.LEch)) / (Number(Mv) * Number(Cth));
     console.log("deltaTadia:", deltaTadia);
     if (Ep >= 5) {
       R = 1;
     }
     else {
       // Prise en compte des déperditions thermiques
-      R = Math.min(1, (1 / (1 + Math.pow(((Math.max(0.3, -0.0057 * Q41 + 2.0558)) / Ep), 1.5))));
+      R = Math.min(1, (1 / (1 + Math.pow(((Math.max(0.3, -0.0057 * Number(Q41) + 2.0558)) / Number(Ep)), 1.5))));
     }
     this.coefReduc = R;
     console.log("R:", this.coefReduc);
@@ -293,9 +296,9 @@ export class CalculatorPage {
   }
 
   checkIfQ120SupQ41(g: FormGroup) {
-    if(g.get('field_Q120').value && g.get('field_Q41').value){
+    if (g.get('field_Q120').value && g.get('field_Q41').value) {
       return Number(g.get('field_Q120').value) > Number(g.get('field_Q41').value)
-        ? null : { 'wrongQ120': true };
+        ? null : {'wrongQ120': true};
     }
     else {
       return null;

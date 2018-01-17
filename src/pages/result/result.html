@@ -52,7 +52,7 @@
         <p no-margin>{{'RESULT_PAGE.PARAMS.Q41' | translate}}</p>
         <h3 class="no-margin-top">{{inputVariables.Q41}}<small>kJ/kg</small></h3>
       </ion-col>
-      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap>
+      <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 text-center align-self-end nowrap *ngIf="inputVariables.Q120 !== ''">
         <p no-margin>{{'RESULT_PAGE.PARAMS.Q120' | translate}}</p>
         <h3 class="no-margin-top">{{inputVariables.Q120}}<small>kJ/kg</small></h3>
       </ion-col>
