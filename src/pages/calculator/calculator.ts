@@ -44,22 +44,24 @@ export class CalculatorPage {
 
   createFormBuilder() {
     this.calculator = this.formBuilder.group({
-      select_CEM: [this.inputVariables.CEM, [Validators.required, Validators.pattern('[1-4]')]],
-      field_TLIM: [this.inputVariables.TLIM, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_C: [this.inputVariables.C, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_FS: [this.inputVariables.FS, Validators.pattern(this.expRegWithZero)],
-      field_MK: [this.inputVariables.MK, Validators.pattern(this.expRegWithZero)],
-      field_AS: [this.inputVariables.AS, Validators.pattern(this.expRegWithZero)],
-      field_CV: [this.inputVariables.CV, Validators.pattern(this.expRegWithZero)],
-      field_LA: [this.inputVariables.LA, Validators.pattern(this.expRegWithZero)],
-      field_MV: [this.inputVariables.MV, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_EEFF: [this.inputVariables.EEFF, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_RC2: [this.inputVariables.RC2, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_RC28: [this.inputVariables.RC28, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_Q41: [this.inputVariables.Q41, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-      field_Q120: [this.inputVariables.Q120, Validators.pattern(this.expRegWithoutZero)],
-      field_EP: [this.inputVariables.EP, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
-    });
+        select_CEM: [this.inputVariables.CEM, [Validators.required, Validators.pattern('[1-4]')]],
+        field_TLIM: [this.inputVariables.TLIM, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+        field_C: [this.inputVariables.C, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+        field_FS: [this.inputVariables.FS, Validators.pattern(this.expRegWithZero)],
+        field_MK: [this.inputVariables.MK, Validators.pattern(this.expRegWithZero)],
+        field_AS: [this.inputVariables.AS, Validators.pattern(this.expRegWithZero)],
+        field_CV: [this.inputVariables.CV, Validators.pattern(this.expRegWithZero)],
+        field_LA: [this.inputVariables.LA, Validators.pattern(this.expRegWithZero)],
+        field_MV: [this.inputVariables.MV, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+        field_EEFF: [this.inputVariables.EEFF, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+        field_RC2: [this.inputVariables.RC2, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+        field_RC28: [this.inputVariables.RC28, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+        field_Q41: [this.inputVariables.Q41, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+        field_Q120: [this.inputVariables.Q120, Validators.pattern(this.expRegWithoutZero)],
+        field_EP: [this.inputVariables.EP, [Validators.required, Validators.pattern(this.expRegWithoutZero)]],
+      },
+      {validator: this.checkIfQ120SupQ41}
+    );
   }
 
   displayAdditions() {
@@ -288,5 +290,15 @@ export class CalculatorPage {
     Tini_max = TLim - deltaT;
     console.log("Tmax:", Tini_max);
     this.TMax = Tini_max;
+  }
+
+  checkIfQ120SupQ41(g: FormGroup) {
+    if(g.get('field_Q120').value && g.get('field_Q41').value){
+      return Number(g.get('field_Q120').value) > Number(g.get('field_Q41').value)
+        ? null : { 'wrongQ120': true };
+    }
+    else {
+      return null;
+    }
   }
 }

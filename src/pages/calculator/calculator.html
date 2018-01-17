@@ -141,14 +141,14 @@
           </ion-item>
         </ion-col>
         <ion-col col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2>
-          <ion-item class="no-padding">
+          <ion-item class="no-padding" [ngClass]="{'invalid-field': calculator.hasError('wrongQ120')}">
             <ion-label color="primary" stacked>
               {{'CALCULATOR_PAGE.FIELD_Q120.TITLE' | translate}}
             </ion-label>
-            <ion-input type="number" min="0" formControlName="field_Q120" supValidator="field_Q41"
+            <ion-input type="number" min="0" formControlName="field_Q120"
                        placeholder="{{'CALCULATOR_PAGE.FIELD_Q120.UNIT' | translate}}"></ion-input>
           </ion-item>
-          <p text-right no-margin ion-text color="danger">
+          <p *ngIf="calculator.hasError('wrongQ120')" text-right no-margin ion-text color="danger">
             <small>Q120 < Q41</small>
           </p>
         </ion-col>

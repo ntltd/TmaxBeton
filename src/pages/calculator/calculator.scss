@@ -4,4 +4,10 @@ page-calculator {
     right: 8px;
     top: 6px;
   }
+
+  .invalid-field > .item-inner{
+    border-bottom-color: map_get($colors, danger) !important;
+    -webkit-box-shadow: inset 0 -1px 0 0 map_get($colors, danger) !important;
+    box-shadow: inset 0 -1px 0 0 map_get($colors, danger) !important;
+  }
 }
