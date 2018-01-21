@@ -41,7 +41,7 @@ export class HistoryPage {
   }
 
   roundResult(n) {
-    return (Math.round(n * 100) / 100).toString().replace(".", this.localeAdaptations.separator);
+    return (Math.round(n * 100)).toString().replace(".", this.localeAdaptations.separator);
   }
 
   showCorrectDate(date) {
