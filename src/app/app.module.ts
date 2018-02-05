@@ -27,14 +27,14 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     TmaxBeton,
+    CalculatorPage,
+    GuideDocPage,
+    HistoryPage,
     HomePage,
     MethodPage,
     MethodDocPage,
-    GuideDocPage,
-    HistoryPage,
-    CalculatorPage,
-    ResultPage,
-    MethodModalPage
+    MethodModalPage,
+    ResultPage
   ],
   imports: [
     BrowserModule,
@@ -54,14 +54,14 @@ export function createTranslateLoader(http: Http) {
   bootstrap: [IonicApp],
   entryComponents: [
     TmaxBeton,
+    CalculatorPage,
+    GuideDocPage,
+    HistoryPage,
     HomePage,
     MethodPage,
     MethodDocPage,
-    GuideDocPage,
-    HistoryPage,
-    CalculatorPage,
-    ResultPage,
-    MethodModalPage
+    MethodModalPage,
+    ResultPage
   ],
   providers: [
     StatusBar,
