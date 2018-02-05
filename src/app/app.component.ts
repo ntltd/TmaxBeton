@@ -4,7 +4,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {TranslateService} from '@ngx-translate/core';
 
-import {HomePage} from '../pages/home/home';
+import {CredentialsPage} from '../pages/credentials/credentials';
 import {MethodPage} from '../pages/method/method';
 import {HistoryPage} from '../pages/history/history';
 import {CalculatorPage} from '../pages/calculator/calculator';
@@ -60,8 +60,8 @@ export class TmaxBeton {
         selected: false
       },
       {
-        title: 'HOME_PAGE.TITLE',
-        component: HomePage,
+        title: 'CREDENTIALS.TITLE',
+        component: CredentialsPage,
         icon: 'information-circle',
         category: 'general',
         selected: false

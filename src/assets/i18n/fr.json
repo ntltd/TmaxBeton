@@ -1,6 +1,6 @@
 {
   "APP_TITLE": "Tmax Béton",
-  "HOME_PAGE": {
+  "CREDENTIALS": {
     "TITLE": "A propos",
     "DESCRIPTION": {
       "PARAGRAPH_1": "Cette application permet d'estimer la température maximale atteinte par le béton dans les pièces massives.",

@@ -1,6 +1,6 @@
 {
   "APP_TITLE": "Tmax Concrete",
-  "HOME_PAGE": {
+  "CREDENTIALS": {
     "TITLE": "Credentials",
     "DESCRIPTION": {
       "PARAGRAPH_1": "Cette application permet d'estimer la température maximale atteinte par le béton dans les pièces massives.",
