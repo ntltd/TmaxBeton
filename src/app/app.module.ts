@@ -7,18 +7,18 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {IonicStorageModule} from '@ionic/storage';
 
 import {TmaxBeton} from './app.component';
+import {CalculatorPage} from '../pages/calculator/calculator';
+import {GuideDocPage} from "../pages/guide-doc/guide-doc";
+import {HistoryPage} from '../pages/history/history';
 import {HomePage} from '../pages/home/home';
 import {MethodPage} from '../pages/method/method';
 import {MethodDocPage} from '../pages/method-doc/method-doc';
-import {HistoryPage} from '../pages/history/history';
-import {CalculatorPage} from '../pages/calculator/calculator';
+import {MethodModalPage} from "../pages/method-modal/method-modal";
 import {ResultPage} from '../pages/result/result';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {Clipboard} from '@ionic-native/clipboard';
-import {MethodModalPage} from "../pages/method-modal/method-modal";
-import {GuideDocPage} from "../pages/guide-doc/guide-doc";
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
