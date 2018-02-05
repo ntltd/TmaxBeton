@@ -6,7 +6,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {IonicStorageModule} from '@ionic/storage';
 
-import {MyApp} from './app.component';
+import {TmaxBeton} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {MethodPage} from '../pages/method/method';
 import {MethodDocPage} from '../pages/method-doc/method-doc';
@@ -26,7 +26,7 @@ export function createTranslateLoader(http: Http) {
 
 @NgModule({
   declarations: [
-    MyApp,
+    TmaxBeton,
     HomePage,
     MethodPage,
     MethodDocPage,
@@ -39,7 +39,7 @@ export function createTranslateLoader(http: Http) {
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp, {
+    IonicModule.forRoot(TmaxBeton, {
       mode: 'md'
     }),
     TranslateModule.forRoot({
@@ -53,7 +53,7 @@ export function createTranslateLoader(http: Http) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    TmaxBeton,
     HomePage,
     MethodPage,
     MethodDocPage,

@@ -13,7 +13,7 @@ import {Storage} from "@ionic/storage";
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class TmaxBeton {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = CalculatorPage;
