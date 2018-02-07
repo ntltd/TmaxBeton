@@ -4,7 +4,11 @@
     "TITLE": "A propos",
     "DESCRIPTION": {
       "PARAGRAPH_1": "Cette application permet d'estimer la température maximale atteinte par le béton dans les pièces massives.",
-      "PARAGRAPH_2": "La méthode utilisée est celle présentée dans les \"Recommandations pour la prévention des désordres dus à la réaction sulfatique interne\" (guide technique IFSTTAR d'Octobre 2017).",
+      "PARAGRAPH_2": {
+        "PART_1": "La méthode utilisée est celle présentée dans les",
+        "PART_2": "Recommandations pour la prévention des désordres dus à la réaction sulfatique interne",
+        "PART_3": "(guide technique IFSTTAR, édition 2017)."
+      },
       "PARAGRAPH_3": "L'application a été développée grâce au soutien de la fondation Ecole Française du Béton, fondation d'entreprise dont la mission essentielle est de faciliter la diffusion des connaissances relatives à la connaissance pratique et à la mise en œuvre du béton.",
       "PARAGRAPH_4": "Avertissement : comme avec la méthode dont elle s'inspire, la précision obtenue à l'aide de l'application est forcément limitée. Elle ne doit donc être considérée que comme un outil d'alerte."
     },
