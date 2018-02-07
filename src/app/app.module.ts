@@ -7,6 +7,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {IonicStorageModule} from '@ionic/storage';
 
 import {TmaxBeton} from './app.component';
+
 import {CalculatorPage} from '../pages/calculator/calculator';
 import {GuideDocPage} from "../pages/guide-doc/guide-doc";
 import {HistoryPage} from '../pages/history/history';
@@ -16,20 +17,18 @@ import {MethodDocPage} from '../pages/method-doc/method-doc';
 import {MethodModalPage} from "../pages/method-modal/method-modal";
 import {ResultPage} from '../pages/result/result';
 
+import {CalculatorPageModule} from "../pages/calculator/calculator.module";
+import {GuideDocPageModule} from "../pages/guide-doc/guide-doc.module";
+import {HistoryPageModule} from "../pages/history/history.module";
+import {CredentialsPageModule} from "../pages/credentials/credentials.module";
+import {MethodPageModule} from "../pages/method/method.module";
+import {MethodDocPageModule} from "../pages/method-doc/method-doc.module";
+import {MethodModalPageModule} from "../pages/method-modal/method-modal.module";
+import {ResultPageModule} from "../pages/result/result.module";
+
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {Clipboard} from '@ionic-native/clipboard';
-
-/**
- import {CalculatorPageModule} from "../pages/calculator/calculator.module";
- import {GuideDocPageModule} from "../pages/guide-doc/guide-doc.module";
- import {HistoryPageModule} from "../pages/history/history.module";
- import {HomePageModule} from "../pages/credentials/credentials.module";
- import {MethodPageModule} from "../pages/method/method.module";
- import {MethodDocPageModule} from "../pages/method-doc/method-doc.module";
- import {MethodModalPageModule} from "../pages/method-modal/method-modal.module";
- import {ResultPageModule} from "../pages/result/result.module";
- **/
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -38,14 +37,7 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     TmaxBeton,
-    CalculatorPage,
-    GuideDocPage,
-    HistoryPage,
-    CredentialsPage,
-    MethodPage,
-    MethodDocPage,
-    MethodModalPage,
-    ResultPage
+
   ],
   imports: [
     BrowserModule,
@@ -60,7 +52,15 @@ export function createTranslateLoader(http: Http) {
         deps: [Http]
       }
     }),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    CalculatorPageModule,
+    GuideDocPageModule,
+    HistoryPageModule,
+    CredentialsPageModule,
+    MethodPageModule,
+    MethodDocPageModule,
+    MethodModalPageModule,
+    ResultPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
