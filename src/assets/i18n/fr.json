@@ -87,7 +87,21 @@
     },
     "BUTTON_CALCULATE": "Calculer",
     "SHOW_ADDITIONS": "Afficher les additions",
-    "HIDE_ADDITIONS": "Masquer les additions"
+    "HIDE_ADDITIONS": "Masquer les additions",
+    "ERRORS": {
+      "WRONG": {
+        "TITLE": "Résulat incorrect",
+        "MESSAGE": "Les valeurs saisies produisent une température négative. Vérifiez les valeurs entrées et recommencez."
+      },
+      "MATHS": {
+        "TITLE": "Erreur de calcul",
+        "MESSAGE": "Calcul impossible mathématiquement. Vérifiez les valeurs saisies et recommencez."
+      },
+      "GENERAL": {
+        "TITLE": "Erreur lors du calcul",
+        "MESSAGE": "Vérifiez les valeurs saisies et recommencez."
+      }
+    }
   },
   "HISTORY_PAGE": {
     "TITLE": "Historique des calculs",
@@ -101,9 +115,9 @@
     "TITLE": "Méthode de calcul",
     "TEXT": {
       "PARAGRAPH_1": {
-        "PART_1":"D’après les",
-        "PART_2":"Recommandations pour la prévention des désordres dus à la réaction sulfatique interne",
-        "PART_3":"(édition 2017, IFSTTAR)."
+        "PART_1": "D’après les",
+        "PART_2": "Recommandations pour la prévention des désordres dus à la réaction sulfatique interne",
+        "PART_3": "(édition 2017, IFSTTAR)."
       },
       "PARAGRAPH_2": "La présente section a pour objet de proposer une méthode simplifiée permettant d’évaluer en phase amont d’un projet si certaines pièces doivent être considérées comme des pièces critiques vis-à-vis des risques de formation d’ettringite différée (risques liés à une température excessive au cœur des pièces réalisées), étant donnés les principes de formulation de béton prévus au CCTP. ",
       "PARAGRAPH_3": "Cette section permet donc une estimation de l’élévation maximale de température au cœur d’une pièce en béton pour laquelle on ne connaît que l’épaisseur (dans sa plus petite dimension) et quelques données de base sur la composition du béton. Compte tenu de la température limite Tlimite à ne pas dépasser au cœur de l’élément considéré (correspondant au niveau de prévention cherché), on en déduit la valeur maximale possible Tini_max pour la température initiale du béton frais au moment du bétonnage.",

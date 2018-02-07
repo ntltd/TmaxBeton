@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController} from 'ionic-angular';
+import {AlertController, IonicPage, NavController} from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {Storage} from '@ionic/storage';
 
 import {ResultPage} from '../result/result';
 
 import moment from 'moment';
+import {TranslateService} from "@ngx-translate/core";
 
 @IonicPage()
 @Component({
@@ -34,7 +35,9 @@ export class CalculatorPage {
 
   constructor(public navCtrl: NavController,
               private formBuilder: FormBuilder,
-              private storage: Storage) {
+              private storage: Storage,
+              private translateService: TranslateService,
+              private alertCtrl: AlertController) {
 
     this.createFormBuilder();
 
@@ -216,12 +219,20 @@ export class CalculatorPage {
 
     this.currentTime = moment();
 
-    this.pushToResultPage();
+    if (Number(this.TMax) < 0){
+      this.presentErrorAlert('wrong');
+    }
+    else if (isNaN(Number(this.TMax))){
+      this.presentErrorAlert('maths');
+    }
+    else {
+      this.pushToResultPage();
+    }
   }
 
   // Estimation du dégagement de chaleur à l’infini pour le ciment retenu (Qm)
   degagementChaleurInfini(Q120: string, Q41: number, RC2: number, RC28: number, CEMType: string) {
-    let Qm :number;
+    let Qm: number;
     if (Q120 == "" || !Q120) {
       Qm = Math.max(Q41, Q41 * (1.71 - 1.16 * (RC2 / RC28)));
     }
@@ -238,7 +249,7 @@ export class CalculatorPage {
 
   // Calcul du liant équivalent chaleur (LEch)
   liantEquivalentChaleur(Fs: number, Mk: number, As: number, Cv: number, La: number, C: number, Ep: number) {
-    let res :number, K :number;
+    let res: number, K: number;
     if (Fs == 0 && Mk == 0 && As == 0 && Cv == 0 && La == 0) {
       res = Number(C);
       console.log("Pas d'additions");
@@ -269,7 +280,7 @@ export class CalculatorPage {
   }
 
   calculFinal(EEff: number, Mv: number, Ep: number, TLim: number, Q41: number) {
-    let R :number, alpha :number, deltaTadia :number, deltaT :number, Tini_max :number, Cth :number = 1;
+    let R: number, alpha: number, deltaTadia: number, deltaT: number, Tini_max: number, Cth: number = 1;
     // Prise en compte de l’impact du rapport Eeff/Liant eq. :
     alpha = 1.29 * (1 - Math.exp(-3.3 * (Number(EEff) / Number(this.LEch))));
     console.log("Alpha:", alpha);
@@ -303,5 +314,35 @@ export class CalculatorPage {
     else {
       return null;
     }
+  }
+
+  presentErrorAlert(p: string) {
+    this.translateService.getDefaultLang();
+    this.translateService.get('CALCULATOR_PAGE.ERRORS').subscribe(
+      value => {
+        let title, message;
+        console.log(value);
+        switch (p) {
+          case 'wrong':
+            title = value.WRONG.TITLE;
+            message = value.WRONG.MESSAGE;
+            break;
+          case 'maths':
+            title = value.MATHS.TITLE;
+            message = value.MATHS.MESSAGE;
+            break;
+          default:
+            title = value.GENERAL.TITLE;
+            message = value.GENERAL.MESSAGE;
+            break;
+        }
+        let alert = this.alertCtrl.create({
+          title: title,
+          subTitle: message,
+          buttons: ['Ok']
+        });
+        alert.present();
+      }
+    )
   }
 }
