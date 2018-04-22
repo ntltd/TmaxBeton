@@ -1,5 +1,5 @@
 # TmaxBeton
-_by_ Nicolas Taltaud ([nicolas.taltaud@gmail.com](mailto:nicolas.taltaud@gmail.com))
+by [Nicolas Taltaud](mailto:nicolas.taltaud@gmail.com)
 
 ## Installation
 ### Tools
