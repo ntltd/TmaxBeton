@@ -1,11 +1,11 @@
 # TmaxBeton
 A **Ionic/Cordova** based application for **Ecole Française du Béton** developed by [Nicolas Taltaud](mailto:nicolas.taltaud@gmail.com)
 
-## Available
-| Android | iOS | Wibdows |
+## Platforms
+| Android 4.4+ | iOS 8+ | Windows 8.1/10 |
 | --- | --- | --- |
-| v1.0.0  | v1.0.1  | v1.0.1 |
-| [Google Play](https://play.google.com/store/apps/details?id=efbeton.tmaxbeton.app)  | *Coming soon*  | *Coming soon* |
+| version `1.0.0`  | version `1.0.1`  | version `1.0.1` |
+| [Google Play](https://play.google.com/store/apps/details?id=efbeton.tmaxbeton.app)  | *link coming soon*  | *link coming soon* |
 
 ## Installation
 ### Tools
