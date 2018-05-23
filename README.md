@@ -1,4 +1,5 @@
 <div align="center">
+<img src="TmaxBeton/blob/master/src/assets/imgs/logos/logo_efb_h100.png" width="100" alt="EFB" />
 <h1>TmaxBeton</h1>
 Ionic/Cordova based application for <a href="https://www.efbeton.com/" taget="_blank">Ecole Française du Béton</a>.
 </div>
