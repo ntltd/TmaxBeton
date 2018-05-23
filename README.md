@@ -33,19 +33,19 @@ ionic serve -w chrome
 ```
 ionic cordova build android --prod --release
 ```
-(install first [Android Studio](https://developer.android.com/studio/index.html))
+(needs [Android Studio](https://developer.android.com/studio/index.html) development tools)
 
 ### iOS
 ```
 ionic cordova build ios --prod --release
 ```
-(install first [XCode](https://developer.apple.com/xcode/))
+(needs [XCode](https://developer.apple.com/xcode/) development tools)
 
 ### Windows
 ```
 ionic cordova build windows -- --arch=x86 --appx=uap
 ```
-(install first [Visual Studio](https://www.visualstudio.com/fr/vs/))
+(needs [Visual Studio](https://www.visualstudio.com/fr/vs/) development tools)
 
 ## Deploy and sign apps
 [Official documentation](https://ionicframework.com/docs/intro/deploying/)
