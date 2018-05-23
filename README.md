@@ -1,6 +1,6 @@
 <div align="center">
 <h1>TmaxBeton</h1>
-Ionic/Cordova based application for Ecole Française du Béton developed by <a href="mailto:nicolas.taltaud@gmail.com">Nicolas Taltaud</a>
+Ionic/Cordova based application for <a href="https://www.efbeton.com/" taget="_blank">Ecole Française du Béton</a> developed.
 </div>
 
 ## Platforms
